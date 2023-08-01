@@ -13,3 +13,12 @@
     rgba(217, 217, 217, 0) 100%
   );
 }
+
+.activeLink {
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(201, 184, 32, 0.61) 0%,
+    rgba(52, 37, 31, 0) 100%
+  );
+}
