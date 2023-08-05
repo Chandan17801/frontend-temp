@@ -162,10 +162,7 @@ export default function Home() {
           style={{ backgroundColor: "rgba(133, 115, 19, 0.88)" }}
         ></div>
 
-        {/* Bigger Circle */}
-
-        {/* You can add content inside the circle */}
-        {/* For example: */}
+      
 
       </div>
 
