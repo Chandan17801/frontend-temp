@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Image1 from "../assets/images1.png";
 import Image13 from "../assets/image13.jpg";
+import Img1 from "../assets/Img1.jpeg";
+import Img2 from "../assets/img2.jpeg";
+import Img3 from "../assets/img3.jpeg";
 // import vector from "../assets/Vector.png";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -108,7 +111,7 @@ export default function Home() {
                 style={{ backgroundColor: "#E5E7EB" }}
               >
                 {/* Add content for the first div */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
+                <Image src={Img1} alt="Image 1" className="mb-4 h-[300px] w-[300px]" />
                 <button
                   className="text-white font-bold py-2 px-4 rounded shadow-md mt-2"
                   style={{ backgroundColor: "#34251F", opacity: "90%" }}
@@ -162,52 +165,56 @@ export default function Home() {
           style={{ backgroundColor: "rgba(133, 115, 19, 0.88)" }}
         ></div>
 
-      
+
 
       </div>
 
-      <div className="w-[92%] h-[580px] flex justify-center gap-20 items-center bg-yellow-600 z-[-10]" style={{ marginTop: "250px", marginLeft: "4%", marginRight: "4%",  backgroundImage: "url('../assets/Vector.png')" }}>
 
-        {/* Left Side */}
-        <div className="flex flex-col items-center">
-          {/* Small Circle */}
-          <div className="rounded-full   h-36 w-36 mb-2" style={{ backgroundColor: "rgba(236, 220, 75, 0.63)", marginTop: "100px",marginLeft:"-400px" }}></div>
-          {/* Heading */}
+      <div style={{position:"relative",marginTop: "250px", marginLeft: "4%", marginRight: "4%"}}>
+        <div className="w-[92%] h-[580px] flex justify-center gap-20 items-center  z-[-10]" style={{ position:"absolute", backgroundImage: "url('../assets/Vector.png')", backgroundColor: "rgba(194, 174, 0, 1)" }}>
+
+          {/* Left Side */}
+          <div className="flex flex-col items-center">
+            {/* Small Circle */}
+            <div className="rounded-full   h-36 w-36 mb-2" style={{ backgroundColor: "rgba(236, 220, 75, 0.63)", marginTop: "40px", marginLeft: "-400px" }}></div>
+            {/* Heading */}
 
 
-          <div className="mt-[-90px] ml-[-34px]">
-          <div className="w-21  h-30"> <h2 className="text-2xl font-bold mb-4" style={{ fontSize: "45px", marginLeft: "100px", color: "white",lineHeight:"50px" }}>Best Seller <br></br> Product</h2></div>
-          <div className="w-22  h-30" style={{ fontSize: "20px", marginLeft: "100px" }}>
-            {/* Paragraph */}
-            <p className="text-gray-600" style={{ color: "white" }}>
-              Your paragraph text goes here.<br></br> You can add more content as needed.
-            </p>
-          </div>
-          </div>
-          
-          {/* Button */}
-          <button className="text-black ml-[-134px] mt-20 font-bold py-2 px-4 rounded shadow-md  hover:bg-yellow-600 transition-colors " style={{ backgroundColor: "white", border: "black solid 2px" }}>
-            See More
-          </button>
-        </div>
+            <div className="mt-[-150px] ml-[-34px]">
+              <div className="w-21  h-30"> <h2 className="text-2xl font-bold mb-4" style={{ fontSize: "45px", marginLeft: "100px", color: "white", lineHeight: "50px" }}>Best Seller <br></br> Product</h2></div>
+              <div className="w-22  h-30" style={{ fontSize: "20px", marginLeft: "100px" }}>
+                {/* Paragraph */}
+                <p className="text-gray-600" style={{ color: "white" }}>
+                  Your paragraph text goes here.<br></br> You can add more content as needed.
+                </p>
+              </div>
+            </div>
 
-        {/* Right Side */}
-        <div className="flex justify-center gap-5 mt-20" style={{ height: "400px", width: "700px" }}>
-          {/* First Product */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "280px", height: "350px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
+            {/* Button */}
+            <button className="text-black ml-[-134px] mt-20 font-bold py-2 px-4 rounded shadow-md  hover:bg-yellow-600 transition-colors " style={{ backgroundColor: "white", border: "black solid 2px" }}>
+              See More
+            </button>
           </div>
 
-          {/* Second Product */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "280px", height: "350px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
+          {/* Right Side */}
+          <div className="flex justify-center gap-5 mt-20" style={{ height: "400px", width: "700px" }}>
+            {/* First Product */}
+            <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "280px", height: "350px" }}>
+              {/* Product Image */}
+              <Image src={Image1} alt="Image 1" className="mb-4" />
+            </div>
+
+            {/* Second Product */}
+            <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "280px", height: "350px" }}>
+              {/* Product Image */}
+              <Image src={Image1} alt="Image 1" className="mb-4" />
+            </div>
+
+
           </div>
-
-
         </div>
       </div>
+
 
       {/* New div with the requested structure */}
       <div className="w-[80%] h-[900px] m-auto mt-8 flex flex-col items-center" >
@@ -222,25 +229,25 @@ export default function Home() {
         {/* First Row */}
         <div className="flex justify-center gap-5 w-full mb-4">
           {/* Product 1 */}
-          <div className=" bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className=" bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
 
           {/* Product 2 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
 
           {/* Product 3 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
 
           {/* Product 4 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
@@ -249,25 +256,25 @@ export default function Home() {
         {/* Second Row */}
         <div className="flex justify-center gap-5 w-full mb-4">
           {/* Product 5 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
 
           {/* Product 6 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
 
           {/* Product 7 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
 
           {/* Product 8 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 " style={{ width: "300px", height: "350px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
           </div>
@@ -288,73 +295,106 @@ export default function Home() {
         {/* First Row */}
         <div className="flex justify-center gap-5 w-full mb-4">
           {/* Product 1 */}
-          <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
 
           {/* Product 2 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
 
           {/* Product 3 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
 
           {/* Product 4 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
         </div>
 
         {/* Second Row */}
         <div className="flex justify-center gap-5 w-full mb-4">
           {/* Product 5 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
 
           {/* Product 6 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
 
           {/* Product 7 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
 
           {/* Product 8 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "350px" }}>
+          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Yellow Background Div */}
-            <div style={{ width: "100%", height: "100px", backgroundColor: "yellow" }}></div>
+            {/* Content */}
+            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
+              <p>Office Wear</p>
+              <p>40 - 70% OFF</p>
+              <p>Shop Now</p>
+            </div>
           </div>
         </div>
       </div>
+
 
 
     </div>
