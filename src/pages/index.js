@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Image1 from "../assets/images1.png";
 import Image13 from "../assets/image13.jpg";
-
+import Image7 from "../assets/image7.png";
 import Img1 from "../assets/Img1.jpeg";
 import Img2 from "../assets/img2.jpeg";
 import Img3 from "../assets/img3.jpeg";
@@ -11,6 +11,7 @@ import Newcollection from "@/components/landingpage/Newcollection";
 import BestSell from "@/components/landingpage/BestSell";
 import OurProduct from "@/components/landingpage/OurProduct";
 import OfficeProduct from "@/components/landingpage/OfficeProduct";
+import Slider from "@/components/landingpage/SliderCon";
 // import vector from "../assets/Vector.png";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,8 +58,12 @@ export default function Home() {
 
 
      <OfficeProduct/>
+     <div className="w-[70%] h-[60%] m-auto  bg-yellow-600" style={{ marginTop: "-30px", marginBottom: "25px", border: "2px solid black" }}>
+        <Image src={Image7} alt="Image 13" style={{ width: "100%", height: "70%", objectFit: "cover" }} />
 
+      </div>
 
+     <Slider/>
     </div>
   );
 }

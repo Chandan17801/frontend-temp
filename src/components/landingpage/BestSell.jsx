@@ -29,8 +29,8 @@ function BestSell() {
             {/* Heading */}
 
 
-            <div className="mt-[-150px] ml-10px">
-              <div className="w-21  h-30"> <h2 className="text-2xl font-bold mb-4" style={{ fontSize: "45px", marginLeft: "10 0px", color: "white", lineHeight: "50px" }}>Best Seller <br></br> Product</h2></div>
+            <div className="mt-[-150px] ml-60px">
+              <div className="w-21  h-30"> <h2 className="text-2xl font-bold mb-4" style={{ fontSize: "45px", marginLeft: "100px", color: "white", lineHeight: "50px" }}>Best Seller <br></br> Product</h2></div>
               <div className="w-22  h-30" style={{ fontSize: "20px", marginLeft: "100px" }}>
                 {/* Paragraph */}
                 <p className="text-gray-600" style={{ color: "white" }}>
