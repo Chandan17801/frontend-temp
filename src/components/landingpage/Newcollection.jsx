@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import Image1 from "../../assets/images1.png";
+import img1 from "../../assets/img1.jpeg"
 function Newcollection() {
   return (
     <div>
@@ -27,10 +28,11 @@ function Newcollection() {
                 style={{ backgroundColor: "#E5E7EB" }}
               >
                 {/* Add content for the first div */}
-                <Image src={Image1} alt="Image 1" className="mb-4 h-[300px] w-[300px]" />
+                <Image src={img1} alt="Image 1" className="mb-4 h-[350px]  
+                " style={{  backgroundSize: "cover"}} />
                 <button
-                  className="text-white font-bold py-2 px-4 rounded shadow-md mt-2"
-                  style={{ backgroundColor: "#34251F", opacity: "90%" }}
+                  className="text-white font-bold py-2 px-4 rounded shadow-md mt-0"
+                  style={{ backgroundColor: "#34251F", opacity: "90%"}}
                 >
                   Saree
                 </button>
@@ -42,7 +44,8 @@ function Newcollection() {
                 style={{ backgroundColor: "#E5E7EB" }}
               >
                 {/* Add content for the first div */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
+                <Image src={img1} alt="Image 1" className="mb-4 h-[350px] 
+                " style={{  backgroundSize: "cover"}} />
                 <button
                   className="text-white font-bold py-2 px-4 rounded shadow-md mt-2"
                   style={{ backgroundColor: "#34251F", opacity: "90%" }}
@@ -57,7 +60,8 @@ function Newcollection() {
                 style={{ backgroundColor: "#E5E7EB" }}
               >
                 {/* Add content for the first div */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
+                <Image src={img1} alt="Image 1" className="mb-4 h-[350px] 
+                " style={{  backgroundSize: "cover"}} />
                 <button
                   className="text-white font-bold py-2 px-4 rounded shadow-md mt-2"
                   style={{ backgroundColor: "#34251F", opacity: "90%" }}
