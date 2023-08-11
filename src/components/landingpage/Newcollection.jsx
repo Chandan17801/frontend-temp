@@ -28,16 +28,15 @@ function Newcollection() {
                 style={{ backgroundColor: "#E5E7EB" }}
               >
                 {/* Add content for the first div */}
-                <Image src={img1} alt="Image 1" className="mb-4 h-[350px]  
+                <Image src={img1} alt="Image 1" className="mb-4 h-[350px] 
                 " style={{  backgroundSize: "cover"}} />
                 <button
-                  className="text-white font-bold py-2 px-4 rounded shadow-md mt-0"
-                  style={{ backgroundColor: "#34251F", opacity: "90%"}}
+                  className="text-white font-bold py-2 px-4 rounded shadow-md mt-2"
+                  style={{ backgroundColor: "#34251F", opacity: "90%" }}
                 >
                   Saree
                 </button>
               </div>
-
               {/* Div 2 */}
               <div
                 className="flex flex-col justify-center p-4 h-[410px] w-[350px]"
