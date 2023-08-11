@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import Image1 from "../assets/images1.png";
+import Product from '../components/Product';
 const fashion = () => {
   return (
     <div>
@@ -20,14 +21,14 @@ const fashion = () => {
           <div className="flex justify-between items-center mb-4">
             {/* Breadcrumb */}
             <div className="w-72 flex ">
-              <div className="flex items-center mr-3" style={{ border: "2px solid black" }}>
+              <div className="flex items-center mr-3" style={{ border: "2px solid #888",color:"#888"  }}>
                 <label htmlFor="sortBy" className="mr-2"></label>
                 <select id="sortBy">
                   <option value="recommendation">Combos</option>
                   {/* Add other sorting options here */}
                 </select>
               </div>
-              <div className="flex items-center" style={{ border: "2px solid black" }}>
+              <div className="flex items-center" style={{ border: "2px solid #888",color:"#888"  }}>
                 <label htmlFor="sortBy" className="mr-2"></label>
                 <select id="sortBy">
                   <option value="recommendation">Size</option>
@@ -37,7 +38,7 @@ const fashion = () => {
             </div>
 
             {/* Sort By Dropdown */}
-            <div className="flex items-center" style={{ border: "2px solid black" }}>
+            <div className="flex items-center" style={{ border: "2px solid #888",color:"#888" }}>
               <label htmlFor="sortBy" className="mr-2">Sort by:</label>
               <select id="sortBy">
                 <option value="recommendation">Recommendation</option>
@@ -52,7 +53,7 @@ const fashion = () => {
       </div>
       <div className="flex">
         {/* Left Div */}
-        <div style={{ width: "20%", height: "1000px", border: "gray 2px solid" }} >
+        <div style={{ width: "20%", height: "1000px", border: " 2px solid #888" }} >
           {/* Content for left div */}
           <div style={{
             width: "80%", height: "100px", margin: "auto", color: "#000",
@@ -207,7 +208,7 @@ const fashion = () => {
               <div>
                 <label>
                   <input type="radio" />
-                10% and above
+                  10% and above
                 </label>
               </div>
               <div>
@@ -244,151 +245,27 @@ const fashion = () => {
             {/* First Row */}
             <div className="flex justify-center gap-4 w-full mb-4">
               {/* Product 1 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 2 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 3 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 4 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-            </div>
+            <Product/>
+            <Product/>
+            <Product/>
+            <Product/>
+             </div>
 
             {/* Second Row */}
-            <div className="flex justify-center gap-5 w-full mb-4">
-              {/* Product 5 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 6 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-              {/* Product 7 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 8 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center gap-5 w-full mb-4">
-              {/* Product 5 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 6 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-              {/* Product 7 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-
-              {/* Product 8 */}
-              <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "500px", height: "300px" }}>
-                {/* Product Image */}
-                <Image src={Image1} alt="Image 1" className="mb-4" />
-                {/* Content */}
-                <div className="mt-auto  font-bold" style={{ backgroundColor: "none", fontSize: "15px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-                  <p>Saree....</p>
-                  <p>Price $33.38</p>
-
-                </div>
-              </div>
-            </div>
+            <div className="flex justify-center gap-4 w-full mb-4">
+              {/* Product 1 */}
+            <Product/>
+            <Product/>
+            <Product/>
+            <Product/>
+             </div>
+             <div className="flex justify-center gap-4 w-full mb-4">
+              {/* Product 1 */}
+            <Product/>
+            <Product/>
+            <Product/>
+            <Product/>
+             </div>
           </div>
 
         </div>
