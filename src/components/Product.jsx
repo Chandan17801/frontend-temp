@@ -16,17 +16,17 @@ function Product() {
   return (
     <div>
       {products.map((product, index) => (
-        <div key={index} className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "250px", height: "300px" }}>
+        <div key={index} className="bg-gray-100 shadow-md rounded-md p-4 w-[250px] h-[300px] productCard">
           {/* Product Image */}
           <Image src={product.imageSrc} alt={`Image ${index + 1}`} className="mb-4" />
           {/* Content */}
           <div className='flex justify-between items-center' style={{marginTop:"-20px", fontSize: "15px", fontFamily: "Lato", opacity: "0.9", padding: '8px', borderRadius: '4px' }}>
             <div className="font-bold">
               <p>{product.description}</p>
-              <p>Price {product.price}</p>
+              <p className='productPrice' >Price {product.price}</p>
             </div>
-            <div style={{ backgroundColor: "#E0DB5C", padding: "8px", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <FaPlus size={20} color="white" />
+            <div className='AddToCartButton' style={{ backgroundColor: "#E0DB5C", padding: "8px", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <FaPlus color="white" />
             </div>
           </div>
         </div>

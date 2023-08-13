@@ -14,11 +14,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+           
           </div>
 
           {/* Product 2 */}
@@ -26,11 +22,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+           
           </div>
 
           {/* Product 3 */}
@@ -38,11 +30,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+            
           </div>
 
           {/* Product 4 */}
@@ -50,11 +38,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+           
           </div>
         </div>
 
@@ -65,11 +49,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+          
           </div>
 
           {/* Product 6 */}
@@ -77,11 +57,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+           
           </div>
 
           {/* Product 7 */}
@@ -89,11 +65,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+           
           </div>
 
           {/* Product 8 */}
@@ -101,11 +73,7 @@ function OfficeProduct() {
             {/* Product Image */}
             <Image src={Image1} alt="Image 1" className="mb-4" />
             {/* Content */}
-            <div className="mt-auto text-center font-bold" style={{ backgroundColor: "rgba(216, 219, 81, 0.72)", fontSize: "23px", margin: "auto", fontFamily: "Lato", opacity: "0.9" }}>
-              <p>Office Wear</p>
-              <p>40 - 70% OFF</p>
-              <p>Shop Now</p>
-            </div>
+           
           </div>
         </div>
       </div>

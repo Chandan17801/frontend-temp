@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import Image1 from "../../assets/images1.png";
+
 import img1 from "../../assets/img1.jpeg"
 function Newcollection() {
   return (

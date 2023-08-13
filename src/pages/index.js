@@ -50,16 +50,16 @@ export default function Home() {
       <OurProduct/>
 
 
-      <div className="w-[80%] h-[70%] m-auto  bg-yellow-600" style={{ marginTop: "-30px", marginBottom: "25px", border: "2px solid black" }}>
-        <Image src={Image13} alt="Image 13" style={{ width: "100%", height: "70%", objectFit: "cover" }} />
+      <div className="w-[100%] h-[40%]   bg-yellow-600" style={{ marginTop: "-30px", marginBottom: "25px", border: "2px solid black" }}>
+        <Image src={Image13} alt="Image 13" style={{ width: "100%", height: "40%", objectFit: "cover" }} />
 
       </div>
 
 
 
      <OfficeProduct/>
-     <div className="w-[70%] h-[60%] m-auto  bg-yellow-600" style={{ marginTop: "-30px", marginBottom: "25px", border: "2px solid black" }}>
-        <Image src={Image7} alt="Image 13" style={{ width: "100%", height: "70%", objectFit: "cover" }} />
+     <div className="w-[100%] h-[40%] m-auto  bg-yellow-600" style={{ marginTop: "-30px", marginBottom: "25px", border: "2px solid black" }}>
+        <Image src={Image7} alt="Image 13" style={{ width: "100%", height: "40%", objectFit: "cover" }} />
 
       </div>
 

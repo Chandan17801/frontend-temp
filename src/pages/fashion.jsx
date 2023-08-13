@@ -1,15 +1,15 @@
 import React from 'react'
-import Image from 'next/image';
-import Image1 from "../assets/images1.png";
+import { FaSearch } from 'react-icons/fa';
 import Product from '../components/Product';
+
 const fashion = () => {
   return (
     <div>
-      <div className='w-72  ml-5'>
+      <div className='topHeading w-72  ml-5'>
         <p style={{ color: "#000", fontFamily: "Philosopher", fontWeight: "bold", fontSize: "20px" }}>Home / Clothing / Saree</p>
         <h3 className='ml-3' style={{ color: "#000", fontFamily: "Philosopher", fontWeight: "bold", fontSize: "20px" }}>Saree - 10491 items</h3>
       </div>
-      <div className="flex">
+      <div className="flex SizeFilterFullScreen">
         {/* Left Side Filter */}
         <div className="w-1/4  p-4">
           <h3 className="mb-4" style={{ color: "#000", fontFamily: "Biryani", fontWeight: "bold", fontSize: "20px" }}>Filter</h3>
@@ -21,14 +21,14 @@ const fashion = () => {
           <div className="flex justify-between items-center mb-4">
             {/* Breadcrumb */}
             <div className="w-72 flex ">
-              <div className="flex items-center mr-3" style={{ border: "2px solid #888",color:"#888"  }}>
+              <div className="flex items-center mr-3" style={{ border: "2px solid #888", color: "#888" }}>
                 <label htmlFor="sortBy" className="mr-2"></label>
                 <select id="sortBy">
                   <option value="recommendation">Combos</option>
                   {/* Add other sorting options here */}
                 </select>
               </div>
-              <div className="flex items-center" style={{ border: "2px solid #888",color:"#888"  }}>
+              <div className="flex items-center" style={{ border: "2px solid #888", color: "#888" }}>
                 <label htmlFor="sortBy" className="mr-2"></label>
                 <select id="sortBy">
                   <option value="recommendation">Size</option>
@@ -38,7 +38,7 @@ const fashion = () => {
             </div>
 
             {/* Sort By Dropdown */}
-            <div className="flex items-center" style={{ border: "2px solid #888",color:"#888" }}>
+            <div className="flex items-center" style={{ border: "2px solid #888", color: "#888" }}>
               <label htmlFor="sortBy" className="mr-2">Sort by:</label>
               <select id="sortBy">
                 <option value="recommendation">Recommendation</option>
@@ -51,9 +51,35 @@ const fashion = () => {
           {/* Add your main content items here */}
         </div>
       </div>
+      <div className='flex SizeFilterMobileScreen'>
+        <div className='flex justify-center ml-[200px] mt-[30px]'>
+        <div className='mr-[10px]'>
+              <select id="sortBy" className=' border-[2px] border-gray-400 rounded-[20px] px-[3px]'>
+                <option value="sortBy">SortBy &nbsp;&nbsp;</option>
+                <option value="sortBy">Price 2</option>
+                <option value="sortBy">Price 3</option>
+                <option value="sortBy">Price 3</option>
+                <option value="sortBy">Price 5</option>                 
+              </select>
+            </div>
+            <div>    
+              <select id="FilterBy" className=' border-[2px] border-gray-400 rounded-[20px] px-[2px]'>
+                <option value="filter">Filter &nbsp; &nbsp;</option>
+                <option value="filter">Price</option>
+                <option value="filter">Size</option>
+                {/* Add other sorting options here */}
+              </select>
+            </div>
+        </div>   
+      </div>
+      <hr />
+
+
       <div className="flex">
         {/* Left Div */}
-        <div style={{ width: "20%", height: "1000px", border: " 2px solid #888" }} >
+        <div className="left-div" style={{ width: "20%", height: "1000px", background: "#FFF", boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }} >
+
+
           {/* Content for left div */}
           <div style={{
             width: "80%", height: "100px", margin: "auto", color: "#000",
@@ -62,73 +88,46 @@ const fashion = () => {
             fontStyle: "normal",
             fontWeight: "400"
           }} >
-            <p>CATEGORIES</p>
+            <div className='flex' style={{ justifyContent: "space-between" }}><p>CATEGORIES</p> <p style={{ margin: '5px 0px 0px 0px', color: "#888", backgroundColor: "white", borderRadius: "10px" }}>
+              <FaSearch />
+            </p></div>
             <div style={{ marginLeft: "6px" }}>
               <div>
                 <label>
-                  <input type="checkbox" /> Silk Saree (1063)
+                  <input type="checkbox" /> Pure Silk Saree
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="checkbox" /> Cotton Saree (1328)
+                  <input type="checkbox" /> Semi Silk Saree
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" /> Cotten Saree
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" /> Kanchivaram Saree
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" /> Bandhani Saree
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" /> Organga Saree
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" /> Printed Saree
                 </label>
               </div>
             </div>
-
-          </div>
-          <div style={{
-            width: "80%", height: "100px", margin: "auto", color: "#000",
-            fontFamily: "Biryani",
-            fontSize: "17px",
-            fontStyle: "normal",
-            fontWeight: "400"
-          }}>
-            <p>BRAND</p>
-            <div style={{ marginLeft: "6px" }}>
-              <div>
-                <label>
-                  <input type="checkbox" /> QRL (3522)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> XYZ (2606)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" />ABC (2135)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> WER (1843)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" />  RTY (1616)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> MNB (1448)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> ASD (1431)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> VBN (1345)
-                </label>
-              </div>
-            </div>
-            <h6 style={{ color: "red" }}>+ 650 more</h6>
-
 
           </div>
 
@@ -165,37 +164,56 @@ const fashion = () => {
           </div>
 
           <div style={{ width: "80%", height: "100px", margin: "auto", marginTop: "100px", fontFamily: "Biryani", fontSize: "17px", fontStyle: "normal", fontWeight: "400" }} >
-            <p>COLOR  </p>
-            <div style={{ marginLeft: "6px" }}>
-              <div>
-                <label >
-                  <input type="radio" /> Black (15606)
-                </label>
+            <div className='flex' style={{ justifyContent: "space-between" }}><p>COLOR</p> <p style={{ margin: '5px 0px 0px 0px', color: "#888", backgroundColor: "white", borderRadius: "10px" }}>
+              <FaSearch />
+            </p></div>
+            <div style={{ marginLeft: "6px", height: "auto" }}>
+              <div style={{ width: "19px", height: "17px", display: "flex", gap: "5px", marginBottom: "7px" }}>
+                <div ><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                  <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#000" />
+                </svg></div> <div style={{ width: "40px", height: "25px" }}>Black  </div>
               </div>
-              <div>
-                <label>
-                  <input type="radio" /> Blue (13236)
-                </label>
+              <div style={{ width: "19px", height: "17px", display: "flex", gap: "5px", marginBottom: "7px" }}>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                  <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#4F93FA" />
+                </svg></div> <div style={{ width: "30px", height: "25px" }}>Blue  </div>
               </div>
-              <div>
-                <label>
-                  <input type="radio" />  White (12701)
-                </label>
+              <div style={{ width: "19px", height: "17px", display: "flex", gap: "5px", marginBottom: "7px", marginLeft: "-5px" }}>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="27" height="25" viewBox="0 0 27 25" fill="none">
+                  <g filter="url(#filter0_d_26_414)">
+                    <ellipse cx="13.5" cy="8.5" rx="9.5" ry="8.5" fill="#F1F1F1" />
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_26_414" x="0" y="0" width="27" height="25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                      <feOffset dy="4" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_26_414" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_26_414" result="shape" />
+                    </filter>
+                  </defs>
+                </svg></div> <div style={{ width: "30px", height: "25px", marginLeft: "-3px" }}>White </div>
               </div>
-              <div>
-                <label>
-                  <input type="radio" /> Green (7150)
-                </label>
+
+
+              <div style={{ width: "19px", height: "17px", display: "flex", gap: "5px", marginBottom: "7px" }}>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                  <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#110076" />
+                </svg></div> <div style={{ width: "30px", height: "25px" }}>Navy   </div>
               </div>
-              <div>
-                <label>
-                  <input type="radio" /> Grey (6298)
-                </label>
+
+              <div style={{ width: "19px", height: "17px", display: "flex", gap: "5px", marginBottom: "7px" }}>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                  <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#04BC43" />
+                </svg></div> <div style={{ width: "30px", height: "25px" }}>Green </div>
               </div>
-              <div>
-                <label>
-                  <input type="radio" /> Red (5489)
-                </label>
+              <div style={{ width: "19px", height: "17px", display: "flex", gap: "5px", marginBottom: "7px" }}>
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill="none">
+                  <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#F00" />
+                </svg></div> <div style={{ width: "30px", height: "25px" }}>Red </div>
               </div>
 
             </div>
@@ -238,34 +256,32 @@ const fashion = () => {
           </div>
         </div>
         {/* Right Div */}
-        <div style={{ width: "80%", height: "1000px" }}>
-          <div className="w-[80%] h-[900px] m-auto mt-8 flex flex-col items-center">
+        <div className="right-div w-[80%]">
+          <div className=" m-auto mt-8 flex flex-col items-center">
             {/* Heading */}
 
             {/* First Row */}
-            <div className="flex justify-center gap-4 w-full mb-4">
+            <div className="productsCardParent flex justify-center gap-5 w-full mb-4">
               {/* Product 1 */}
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-             </div>
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+            </div>
 
             {/* Second Row */}
-            <div className="flex justify-center gap-4 w-full mb-4">
-              {/* Product 1 */}
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-             </div>
-             <div className="flex justify-center gap-4 w-full mb-4">
-              {/* Product 1 */}
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-             </div>
+            <div className="productsCardParent flex justify-center gap-5 w-full mb-4">
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+            </div>
+            <div className="productsCardParent flex justify-center gap-5 w-full mb-4">
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+            </div>
           </div>
 
         </div>
