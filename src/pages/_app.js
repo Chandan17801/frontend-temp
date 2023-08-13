@@ -6,7 +6,7 @@ import './fashion.css'
 export default function App({ Component, pageProps }) {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar /> 
       <main className="min-h-screen">
         <Component {...pageProps} />
       </main>
