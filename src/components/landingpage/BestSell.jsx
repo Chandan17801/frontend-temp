@@ -20,7 +20,7 @@ function BestSell() {
 
       </div>
       <div style={{marginTop:"200px"}}>
-        <div className="w-[92%] h-[580px] m-auto  flex justify-center gap-20 items-center  z-[-10]" style={{  backgroundImage: "url('../assets/Vector.png')", backgroundColor: "rgba(194, 174, 0, 1)" }}>
+        <div className="w-[92%] h-[580px] m-auto  flex justify-center gap-20 items-center  z-[-10]" style={{backgroundColor: "rgba(194, 174, 0, 1)" }}>
 
           {/* Left Side */}
           <div className="flex flex-col items-center">
