@@ -1,11 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Image1 from "../assets/images1.png";
 import Image13 from "../assets/image13.jpg";
 import Image7 from "../assets/image7.png";
-import Img1 from "../assets/Img1.jpeg";
-import Img2 from "../assets/img2.jpeg";
-import Img3 from "../assets/img3.jpeg";
 import Topsection from "@/components/landingpage/Topsection";
 import Newcollection from "@/components/landingpage/Newcollection";
 import BestSell from "@/components/landingpage/BestSell";
