@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const login = () => {
+const Login = () => {
   const [loginData, setLoginData] = useState({});
   // Chnage handler
   const handleChnage = (e) => {
@@ -25,4 +25,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
