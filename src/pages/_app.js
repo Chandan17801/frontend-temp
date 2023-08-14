@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
       <main className="min-h-screen">
         <Component {...pageProps} />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
