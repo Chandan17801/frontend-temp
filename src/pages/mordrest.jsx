@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Cartpage from '@/components/cart_page/Cartpage'
 const mordrest = () => {
   return (
-    <div>mordrest</div>
+    <div>
+    <Cartpage/>
+    </div>
   )
 }
 
