@@ -101,9 +101,11 @@ const Navbar = () => {
             {cartItemsNumber}
           </text>
         </svg>
-        <div className="p-1 cursor-pointer px-6 transition-all duration-700 hover:text-white hover:bg-[#34251f]">
-          Login
-        </div>
+        <Link href={"/users/login"}>
+          <div className="p-1 cursor-pointer px-6 transition-all duration-700 hover:text-white hover:bg-[#34251f]">
+            Login
+          </div>
+        </Link>
         <div className="mr-4 visible hidden">
           <AiOutlineMenu />
         </div>
