@@ -22,3 +22,36 @@
     rgba(52, 37, 31, 0) 100%
   );
 }
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .container {
+      flex-direction: row;
+  }
+}
+
+.sidebar {
+  width: 100%;
+  background-color: rgba(214, 203, 107, 0.16);
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+      width: 30%;
+  }
+}
+
+.main-content {
+  width: 100%;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+      width: 70%;
+  }
+}
+
