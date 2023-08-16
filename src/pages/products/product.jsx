@@ -13,16 +13,19 @@ import {
 const products = () => {
   return (
     <div>
-      <div className="md:flex md:m-5">
-        <div className="md:w-2/3">
-          <div className="border-2 flex md:pr-8 py-3.5 md:pl-8">
-            <Image
-              src={img}
-              width={240}
-              height={800}
-              alt="picture of the saree"
-            ></Image>
-            <div className=" md:pl-3">
+      <div className="md:m-5">
+        <div className="md:w-full">
+          <div className=" border-2 flex md:pr-8 py-3.5 md:pl-8 justify-center">
+            <div className=" flex-col items-center">
+              <Image
+                src={img}
+                layout="responsive"
+                width={700}
+                height={500}
+                alt="picture of the saree"
+              ></Image>
+            </div>
+            <div className=" mt-3 md:pl-3">
               <span className="text-red-500">
                 <FaHeart />
               </span>
@@ -31,23 +34,24 @@ const products = () => {
               </span>
             </div>
           </div>
-          <div className="ml-10 mt-12 flex">
-            <button className="flex bg-yellow-200 p-1 m-2">
-              <span className="pl-2">
+
+          <div className="ml-10 mt-4 md:flex md:justify-center">
+            <button className="flex bg-yellow-200 p-2 m-1">
+              <span className="pl-1">
                 <FaCartArrowDown />
               </span>
-              <span className="pr-2">ADD TO CART</span>
+              <span className="pr-1 text-xs">ADD TO CART</span>
             </button>
 
-            <button className=" flex bg-yellow-600 p-2 m-2">
-              <span className="pl-2">
+            <button className=" flex bg-orange-200 p-2 m-1">
+              <span className="pl-1 text-xs">
                 <FaBuyNLarge />
               </span>
-              <span className="pr-2">Buy Now</span>
+              <span className="pr-1 text-xs">Buy Now</span>
             </button>
           </div>
         </div>
-        <div className="pl-8">
+        <div className="pl-4 md:pl-8 mt-4">
           <h1>
             LOROFY <br />
             <b>DESIGNER SAREE (YELLOW)</b>
