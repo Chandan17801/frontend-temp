@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 const Login = () => {
   const [loginData, setLoginData] = useState({});
   // Chnage handler
@@ -19,8 +20,8 @@ const Login = () => {
     console.log("Submited");
   };
   return (
-    <div className="relative">
-      <section className=" min-h-screen  flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
+    <div className="relative" >
+      <section className="usersContainer min-h-screen  flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
         <form
           onSubmit={handleSubmit}
           className={`flex flex-col justify-center items-center gap-6 bg-[#A89011C7] p-10 rounded-xl ${inter.className}`}
