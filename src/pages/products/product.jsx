@@ -12,51 +12,52 @@ import {
 
 const products = () => {
   return (
-    <div className="container mx-auto p-4 sm:p-8">
-      <div className="md:flex md:m-5">
-        <div className="md:w-full  lg:w-1/2 text-center">
-          <div className="border-2 flex justify-center py-3.5 md:pl-8">
-            <Image
-              src={img}
-              width={800}
-              height={800}
-              alt="picture of the saree"
-            ></Image>
-            <div className=" md:pl-3">
-              <div className="flex space-x-4">
-                <span className="text-red-500">
-                  <FaHeart />
-                </span>
-                <span className="text-purple-500">
-                  <FaShare />
-                </span>
-              </div>
+    <div>
+      <div className="md:m-5">
+        <div className="md:w-full">
+          <div className=" border-2 flex md:pr-8 py-3.5 md:pl-8 justify-center">
+            <div className=" flex-col items-center">
+              <Image
+                src={img}
+                layout="responsive"
+                width={700}
+                height={500}
+                alt="picture of the saree"
+              ></Image>
+            </div>
+            <div className=" mt-3 md:pl-3">
+              <span className="text-red-500">
+                <FaHeart />
+              </span>
+              <span className="text-purple-500">
+                <FaShare />
+              </span>
             </div>
           </div>
-          <div className="mt-4 sm:mt-6 flex justify-center sm:space-x-2">
-            <button className="flex bg-yellow-200 p-1  px-3 rounded">
-              <FaCartArrowDown className="mr-1" />
 
-              <span>ADD TO CART</span>
+          <div className="ml-10 mt-4 md:flex md:justify-center">
+            <button className="flex bg-yellow-200 p-2 m-1">
+              <span className="pl-1">
+                <FaCartArrowDown />
+              </span>
+              <span className="pr-1 text-xs">ADD TO CART</span>
             </button>
 
-            <button className=" flex bg-yellow-600 p-1 px-3 text-white rounded">
-              <FaBuyNLarge className="pl-2 mr-1" />
-
-              <span>Buy Now</span>
+            <button className=" flex bg-orange-200 p-2 m-1">
+              <span className="pl-1 text-xs">
+                <FaBuyNLarge />
+              </span>
+              <span className="pr-1 text-xs">Buy Now</span>
             </button>
           </div>
         </div>
-        {/* content section */}
-        <div className="ml-0 md:ml-8 md:mt-0 mt-4 md:w-full lg:w-1/2">
-          <h1 className="text-lg font-semibold mt-4 sm:text-2xl">
+        <div className="pl-4 md:pl-8 mt-4">
+          <h1>
             LOROFY <br />
             <b>DESIGNER SAREE (YELLOW)</b>
           </h1>
-          <h3 className="text-yellow-400 font-bold sm:text-lg">
-            SPECIAL PRICE
-          </h3>
-          <div className="flex mt-4 sm:flex-row flex-col">
+          <h3 className="text-yellow-400 font-black">SPECIAL PRICE</h3>
+          <div className=" flex mt-4  ">
             <div className="flex mr-7">
               <span className="">
                 <FaRupeeSign />
