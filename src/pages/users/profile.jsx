@@ -5,8 +5,8 @@ import ProfileSidebar from "@/components/profile/ProfileSidebar";
 
 function profile() {
   return (
-    <div className="w-full flex lg:flex-row flex-col">
-      <SideNavbar className="lg:block hidden"/>
+    <div className="w-full flex md:flex-row flex-col">
+      <SideNavbar className="xl:block hidden"/>
       <Profile />
       <ProfileSidebar />
     </div>

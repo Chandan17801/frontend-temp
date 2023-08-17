@@ -12,7 +12,7 @@ const data = [
 
 function ProfileSidebar() {
   return (
-    <div className="w-[34.75rem] bg-[#EBECE5] lg:ml-0 md:ml-[12rem] ml-[6rem] py-[2.25rem] pl-[5.44rem] pr-[10rem]">
+    <div className="lg:w-[34.75rem] md:w-[32rem] w-[37rem] bg-[#EBECE5] py-[2.25rem] pl-[5.44rem] pr-[10rem]">
       {data.map((d) => (
         <SidebarItems key={d.id} name={d.title} />
       ))}
