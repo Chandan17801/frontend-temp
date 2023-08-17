@@ -22,7 +22,7 @@ const Ship = () => {
   };
 
   return (
-    <div className="w-full md:w-1/2  ml-4 md:ml-10 mr-4 md:mr-10 mt-10">
+    <div className="w-full md:w-1/2  ml-4 md:ml-10 mr-4 md:mr-10 mt-10 md:pb-10">
       <div className="flex flex-col md:flex-row">
         <FaArrowLeft className="mr-2" />
         <h2 className="pl-2 md:pl-4">Order Summary</h2>

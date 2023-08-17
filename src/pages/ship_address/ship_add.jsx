@@ -8,8 +8,12 @@ const ShipAdd = () => {
         <OrderSummary />
       </div>
 
-      <div className=" border-5-red md:w-1/2 bg-gray-300 p-4 ">
-        <h1 className="text-white">hi shipping</h1>
+      <div className=" text-center border-5-red md:w-1/2 bg-gray-300 p-4 ">
+        <div className=" flex text-white ">
+          <h1>
+            <a href="#">Shipping</a>--------
+          </h1>
+        </div>
       </div>
     </div>
   );
