@@ -22,7 +22,7 @@ const Ship = () => {
   };
 
   return (
-    <div className="w-1/2  ml-4 md:ml-10 mr-4 md:mr-10 mt-10">
+    <div className="w-full md:w-1/2  ml-4 md:ml-10 mr-4 md:mr-10 mt-10">
       <div className="flex flex-col md:flex-row">
         <FaArrowLeft className="mr-2" />
         <h2 className="pl-2 md:pl-4">Order Summary</h2>
@@ -68,14 +68,14 @@ const Ship = () => {
             </button>
           </div>
         </div>
-        <p className="m-6">599.00</p>
       </div>
-      <div className="flex ml-20 md:ml-20 items-center mt-6 md:mt-0">
-        <p className="mb-20 md:mb-0 md:mr-6">Gift Card/Discount Code</p>
-        <a href="#" className="text-yellow-500 mt-16 justify-between p-6">
-          Apply
-        </a>
-        <br />
+      <div className=" md:ml-2 md:ml-15 items-center mt-6 md:mt-0">
+        <div className="flex justify-between p-6">
+          <p className=" md:mb-0 ">Gift Card/Discount Code</p>
+          <a href="#" className="text-yellow-500  justify-between">
+            Apply
+          </a>
+        </div>
       </div>
       <hr className="border-t border-yellow-500 w-full ml-2" />
 
