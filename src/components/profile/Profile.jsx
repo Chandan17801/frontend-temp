@@ -26,7 +26,7 @@ const address = [
 
 function Profile() {
   return (
-    <div className="md:w-[44rem] w-[35rem]">
+    <div className="md:w-[44rem] w-[35rem] lg:ml-0 md:ml-[8rem] ml-[6rem]">
       <div className="flex px-2">
         <svg
           width="22"
