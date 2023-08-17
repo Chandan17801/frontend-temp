@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="flex justify-center xl:mt-[1.5rem] mt-[3.2rem] items-center relative">
             <input
               type="text"
-              className="search-gradient xl:w-[30rem] w-[20rem] h-[2.5rem] px-[0.5rem] rounded-md"
+              className="search-gradient xl:w-[30rem] w-[15rem] h-[2.5rem] px-[0.5rem] rounded-md"
             />
             <AiOutlineSearch className="w-10 h-10 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700" />
           </div>
