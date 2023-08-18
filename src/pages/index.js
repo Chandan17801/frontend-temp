@@ -37,12 +37,6 @@ export default function Home() {
       </div>
     );
   };
-  return (
-    <div>
-      <SearchBar /> {/* This renders the SearchBar component */}
-      {/* Other content */}
-    </div>
-  );
 
   return (
     <div>
