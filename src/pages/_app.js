@@ -9,7 +9,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Navbar />
-      <SearchBar />
 
       <main className="min-h-screen">
         <Component {...pageProps} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -26,23 +27,34 @@ const SearchBar = () => {
     fetchSuggestions();
   };
 
+  const handleSuggestionClick = (suggestion) => {
+    setQuery(suggestion);
+    setSuggestions([]); // Clear suggestions when a suggestion is clicked
+  };
+
   return (
-    <div className="flex flex-col items-center mt-8">
+    <div className="relative flex justify-center xl:mt-[5rem] mt-[4.7rem] items-center">
       <input
         type="text"
-        className="border p-2 rounded w-64 md:w-96"
-        placeholder="Search for suggestions..."
+        className="search-gradient xl:w-[30rem] w-[15rem] h-[2.5rem] px-[0.5rem] rounded-md"
+        placeholder="Search for products, brands and more"
         value={query}
         onChange={handleInputChange}
       />
+      <AiOutlineSearch className="w-10 h-10 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700" />
+
       {suggestions.length > 0 && (
-        <ul className="mt-2 border rounded w-64 md:w-96">
+        <div className="absolute w-full mt-20 border rounded bg-white shadow-md top-0 left-0">
           {suggestions.map((item, index) => (
-            <li key={index} className="p-2 cursor-pointer hover:bg-gray-100">
+            <div
+              key={index}
+              className="p-2 cursor-pointer hover:bg-gray-100"
+              onClick={() => handleSuggestionClick(item)}
+            >
               {item}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
