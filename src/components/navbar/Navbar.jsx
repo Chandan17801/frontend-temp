@@ -9,6 +9,7 @@ import cart from "../../assets/Cart.png";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import SearchBar from "../suggestions/Suggestions";
 
 const navdata = [
   { id: 1, name: "MODERSTS", url: "/mordrest" },
@@ -49,6 +50,7 @@ const Navbar = () => {
             <input
               type="text"
               className="search-gradient xl:w-[30rem] w-[15rem] h-[2.5rem] px-[0.5rem] rounded-md"
+              placeholder="Search for products, brands and more"
             />
             <AiOutlineSearch className="w-10 h-10 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700" />
           </div>

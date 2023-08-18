@@ -8,7 +8,8 @@ import BestSell from "@/components/landingpage/BestSell";
 import OurProduct from "@/components/landingpage/OurProduct";
 import OfficeProduct from "@/components/landingpage/OfficeProduct";
 import Slider from "@/components/landingpage/SliderCon";
-import UserProfile from "@/components/UserProfile";
+import SearchBar from "@/components/suggestions/Suggestions";
+("@/components/suggestions");
 // import vector from "../assets/Vector.png";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,13 @@ export default function Home() {
       </div>
     );
   };
+  return (
+    <div>
+      <SearchBar /> {/* This renders the SearchBar component */}
+      {/* Other content */}
+    </div>
+  );
+
   return (
     <div>
       <Topsection />
