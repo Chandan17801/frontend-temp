@@ -39,7 +39,7 @@ const Suggestions = () => {
     event.preventDefault();
     try {
       const responseData = await sendRequest(
-        "/products/get_all_Products",
+        "/products/search/" + query,
         "get"
       );
       let temp = [];
@@ -50,6 +50,8 @@ const Suggestions = () => {
       setProducts(temp);
     } catch (err) {}
   };
+
+  console.log(products);
 
   return (
     <div className="relative flex justify-center xl:mt-[5rem] mt-[4.7rem] items-center">
