@@ -23,8 +23,6 @@ function BestSell() {
     fetchProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <div>
       <div className=" w-[100%] m-auto relative">
@@ -99,6 +97,7 @@ function BestSell() {
           >
             {products.map((product) => (
               <div
+                key={product._id}
                 className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 "
                 style={{ width: "280px", height: "350px" }}
               >

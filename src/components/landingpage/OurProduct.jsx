@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useHttpClient } from "@/hooks/http-hook";
-import Image from "next/image";
-import Image1 from "../../assets/images1.png";
 
 function OurProduct() {
   const [products, setProducts] = useState([]);
@@ -14,7 +12,6 @@ function OurProduct() {
           "/products/get_all_Products",
           "get"
         );
-        console.log(responseData);
         let temp = [];
         for (let i = 0; i < responseData.data.length; i++) {
           if (i == 8) break;
@@ -25,8 +22,6 @@ function OurProduct() {
     };
     fetchProducts();
   }, []);
-
-  console.log(products);
 
   const NavLink = ({ title }) => {
     return (
@@ -54,7 +49,7 @@ function OurProduct() {
   return (
     <div>
       <div
-        className="w-[80%] h-[500px] m-auto  flex flex-col items-center"
+        className="w-[80%] m-auto mb-[5rem] flex flex-col items-center"
         style={{ marginTop: "30px" }}
       >
         {/* Heading */}
@@ -78,16 +73,17 @@ function OurProduct() {
           <NavLink title="NEW ARRIVAL" />
         </div>
 
-        <div className="flex justify-center gap-5 w-full mb-4 ">
+        <div className="grid grid-cols-4 gap-[4rem]">
           {products.map((product) => (
             <div
+              key={product._id}
               className=" bg-gray-100 shadow-md rounded-md p-4 "
               style={{ width: "300px", height: "350px" }}
             >
-              <Image
+              <img
                 src={"http://localhost:4001/files/" + product.mainImage}
                 alt="Image 1"
-                className="mb-4"
+                className="mb-4 h-[100%] m-auto"
               />
             </div>
           ))}

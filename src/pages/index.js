@@ -41,16 +41,9 @@ export default function Home() {
   return (
     <div>
       <Topsection />
-
-      {/* New div with the requested structure */}
-
       <Newcollection />
-
       <BestSell />
-
-      {/* New div with the requested structure */}
       <OurProduct />
-
       <div
         className="w-[100%] h-[40%]   bg-yellow-600"
         style={{
