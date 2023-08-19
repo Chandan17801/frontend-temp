@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Image1 from "../../assets/images1.png";
+
 function OurProduct() {
     const NavLink = ({ title }) => {
         return (
