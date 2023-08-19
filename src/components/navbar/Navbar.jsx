@@ -6,9 +6,10 @@ import Sidebar from "./Sidebar";
 import SideDrawerItem from "./SideDrawerItem";
 import logo from "../../assets/logo.png";
 import cart from "../../assets/Cart.png";
-import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import SearchBar from "../suggestions/Suggestions";
 
 const navdata = [
   { id: 1, name: "MODERSTS", url: "/mordrest" },
