@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import img from "../../assets/img3.jpeg";
-
+import axios from "axios";
 import {
   FaHeart,
   FaShare,
@@ -11,6 +12,27 @@ import {
 } from "react-icons/fa";
 
 const products = () => {
+  const [product, setProduct] = useState({});
+  const {
+    query: { productId },
+  } = useRouter();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:4001/api/v1/products/product/${productId}`
+        );
+        setProduct(data);
+      } catch (error) {
+        console.warn(error);
+      }
+    };
+    getProduct();
+  }, [productId]);
+
+  console.log(product);
+
   return (
     <div>
       <div className="md:m-5">
@@ -18,7 +40,7 @@ const products = () => {
           <div className=" border-2 flex md:pr-8 py-3.5 md:pl-8 justify-center">
             <div className=" flex-col items-center">
               <Image
-                src={img}
+                src={product.mainImgage}
                 layout="responsive"
                 width={700}
                 height={500}
