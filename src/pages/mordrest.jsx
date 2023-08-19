@@ -1,10 +1,12 @@
 import React from 'react'
-import Cartpage from '@/components/cart_page/Cartpage'
-import Settingpage from '@/pages/Settingpage'
+import OrderPage from '@/components/Order_page/OrderPage'
+import Rewords from '@/components/Rewords/Rewords'
 const mordrest = () => {
   return (
     <div>
-    <Settingpage/>
+   {/* <OrderPage/> */}
+   <Rewords/>
+
     </div>
   )
 }

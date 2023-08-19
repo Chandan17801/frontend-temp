@@ -52,7 +52,11 @@ input[type="checkbox"]:checked + .toggle-label .toggle-handle {
         display: none;
        
     }
+    
   
     /* Add more specific responsive styles here */
   }
-
+  button.active {
+    background-color: #2ecc71; /* Example color for active state */
+    color: white;
+}
