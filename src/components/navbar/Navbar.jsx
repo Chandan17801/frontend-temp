@@ -38,7 +38,7 @@ const Navbar = () => {
           <SideDrawerItem key={data.id} val={data} />
         ))}
       </Sidebar>
-      <div className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[50rem] py-[2rem] mb-[1rem] flex">
+      <div className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[37rem] py-[2rem] mb-[1rem] flex">
         <div className="w-[20.3125rem] flex justify-center items-center">
           <Link href={"/"}>
             <Image src={logo} alt="logo" />
@@ -48,9 +48,9 @@ const Navbar = () => {
           <div className="flex justify-center xl:mt-[1.5rem] mt-[3.2rem] items-center relative">
             <input
               type="text"
-              className="search-gradient xl:w-[30rem] w-[15rem] h-[2.5rem] px-[0.5rem] rounded-md"
+              className="search-gradient xl:w-[30rem] md:w-[22rem] w-[13rem] h-[2.4rem] px-[0.5rem] rounded-md"
             />
-            <AiOutlineSearch className="w-10 h-10 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700" />
+            <AiOutlineSearch className="w-10 h-9 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700" />
           </div>
           <div className="2xl:block m-2 hidden">
             <div className="flex justify-around items-center gap-4">
@@ -60,14 +60,14 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-2 w-32 mr-2 items-center">
+        <div className="flex justify-center md:gap-2 gap-1 w-32 mr-2 items-center">
           <Image
             src={cart}
             className="cursor-pointer h-[2.19794rem] w-[2.23438rem]"
             alt=""
           />
           <Link href={"/users/login"}>
-            <div className="flex w-[6.75rem] h-[2.8125rem] p-[0.8125rem] justify-center items-center font-[600] text-[1.125rem] cursor-pointer px-6 transition-all duration-700 hover:text-white hover:bg-[#34251f]">
+            <div className="flex md:w-[6.75rem] w-[4.5rem] h-[2.8125rem] md:p-[0.8125rem] p-1 justify-center items-center font-[600] text-[1.125rem] cursor-pointer transition-all duration-700 hover:text-white hover:bg-[#34251f]">
               LOGIN
             </div>
           </Link>
