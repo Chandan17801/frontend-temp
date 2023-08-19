@@ -4,8 +4,8 @@ import Rewords from '@/components/Rewords/Rewords'
 const mordrest = () => {
   return (
     <div>
-   {/* <OrderPage/> */}
-   <Rewords/>
+   <OrderPage/>
+   {/* <Rewords/> */}
 
     </div>
   )

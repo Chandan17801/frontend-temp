@@ -1,9 +1,11 @@
 import React from 'react'
+import green from '../../assets/green.jpg'
+import Image from 'next/image'
 function Address() {
 
   return (
     <div style={{ width: "80%", margin: "auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-around",width:"auto",margin:"auto" }}>
+      <div style={{ display: "flex", justifyContent: "space-around", width: "auto", margin: "auto" }}>
         <p style={{
           color: 'var(--success-500, #12B76A)',
           textAlign: 'center',
@@ -26,34 +28,47 @@ function Address() {
         <p>Delivered</p>
 
       </div>
-      <div style={{ marginLeft:"100px",display: "flex",
-      margin:"auto",justifyContent:'space-around'}}>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
-        <button style={{backgroundColor:"green",width:"12px",height:"5px"}}></button>
+      <div style={{
+        display: "flex",
+        margin: "auto"
+      }}>
+        <div style={{ marginLeft: "150px", display: "flex" }}>
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <Image src={green} alt="" style={{ marginRight: "5px" }} />
+          <svg xmlns="http://www.w3.org/2000/svg" width="238" height="9" viewBox="0 0 238 9" fill="none">
+            <rect width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="31" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="62" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="93" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="124" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="155" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="186" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="217" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect width="21" height="9" rx="4.5" fill="#C4C4C4" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="238" height="9" viewBox="0 0 238 9" fill="none" style={{ marginLeft: "10px" }}>
+            <rect width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="31" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="62" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="93" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="124" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="155" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="186" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect x="217" width="21" height="9" rx="4.5" fill="#C4C4C4" />
+            <rect width="21" height="9" rx="4.5" fill="#C4C4C4" />
+          </svg>
+        </div>
+        <div>
+
+        </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-around",marginLeft:"20px" }}>
+      <div style={{ display: "flex", justifyContent: "space-around", marginLeft: "20px" }}>
         <p style={{
           color: 'var(--success-500, #12B76A)',
           textAlign: 'center',
@@ -131,34 +146,34 @@ function Address() {
 
           }}>Order Issues <br />Delivery Info <br />Track Order</div>
         </div>
-        <div style={{ width: "500px", height: "200px",justifyContent: "space-between" }}>
+        <div style={{ width: "500px", height: "200px", justifyContent: "space-between" }}>
           <div style={{
-          color: '#D6CB6B',
-          fontFamily: 'Inter',
-          fontSize: '18px',
-          fontStyle: 'normal',
-          fontWeight: '500',
-          lineHeight: '20.501px'
-        }}>Order Summary </div>
-        <div style={{display:"flex",justifyContent:"space-between",width:"300px"}}>
-          <p>Subtotal</p> <p>3456</p>
-        </div>
-        <div style={{display:"flex",justifyContent:"space-between",width:"300px"}}>
-          <p>Discount</p> <p>- 119.40</p>
-        </div>
-        <div style={{display:"flex",justifyContent:"space-between",width:"300px"}}>
-          <p>Delivery</p> <p>$0.00</p>
-        </div>
-        <div style={{display:"flex",justifyContent:"space-between",width:"300px"}}>
-          <p>Tax</p> <p>+221.88</p>
-        </div>
-        <br />
-        <hr style={{color:"black",fontWeight:"bold",textAlign:"center"}}/> <br />
-        <div style={{display:"flex",width:"300px",backgroundColor:"black",color:"yellow",height:"50px"}}>
-         <div style={{margin:"auto",width:"95%",display:"flex",justifyContent:"space-between"}}> <p>Total</p> <p>2230.00</p></div>
-        </div>
-        
-        
+            color: '#D6CB6B',
+            fontFamily: 'Inter',
+            fontSize: '18px',
+            fontStyle: 'normal',
+            fontWeight: '500',
+            lineHeight: '20.501px'
+          }}>Order Summary </div>
+          <div style={{ display: "flex", justifyContent: "space-between", width: "300px" }}>
+            <p>Subtotal</p> <p>3456</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", width: "300px" }}>
+            <p>Discount</p> <p>- 119.40</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", width: "300px" }}>
+            <p>Delivery</p> <p>$0.00</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", width: "300px" }}>
+            <p>Tax</p> <p>+221.88</p>
+          </div>
+          <br />
+          <hr style={{ color: "black", fontWeight: "bold", textAlign: "center" }} /> <br />
+          <div style={{ display: "flex", width: "300px", backgroundColor: "black", color: "yellow", height: "50px" }}>
+            <div style={{ margin: "auto", width: "95%", display: "flex", justifyContent: "space-between" }}> <p>Total</p> <p>2230.00</p></div>
+          </div>
+
+
         </div>
 
       </div>
