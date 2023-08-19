@@ -8,8 +8,7 @@ const payment = () => {
       <div className=" border-4 md:w-1/2 overflow-hidden ">
         <OrderSummary />
       </div>
-
-      <div className="p-10 border-5-red md:w-1/2 bg-gray-300 p-4 ">
+      <div className="p-10 border-5-red md:w-1/2 bg-gray-300">
         <div>
           <h1>Payment</h1>
         </div>

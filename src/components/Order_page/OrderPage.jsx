@@ -1,7 +1,6 @@
 import React from "react";
 import {
   IoSettingsSharp,
-
   IoNotificationsSharp,
   IoHelpSharp,
 } from "react-icons/io5";
@@ -18,6 +17,7 @@ import explore from '../../assets/explore.png';
 import { IoHomeSharp } from 'react-icons/io5';
 import { useState } from "react";
 import Address from "./Address";
+
 function OrderPage() {
   const [state, setState] = useState(true);
   return (

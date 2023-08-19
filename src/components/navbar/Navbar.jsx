@@ -9,7 +9,7 @@ import cart from "../../assets/Cart.png";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import SearchBar from "../suggestions/Suggestions";
+import Suggestions from "../suggestions/Suggestions";
 
 const navdata = [
   { id: 1, name: "MODERSTS", url: "/mordrest" },
@@ -47,7 +47,7 @@ const Navbar = () => {
         </div>
         <div className="w-full h-[65px] flex justify-center pt-[1rem] items-center flex-col">
           <div className="flex justify-center xl:mt-[1.5rem] mt-[3.2rem] items-center relative">
-            <SearchBar />
+            <Suggestions />
           </div>
           <div className="2xl:block m-2 hidden">
             <div className="flex justify-around items-center gap-4">
