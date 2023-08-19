@@ -2,7 +2,7 @@ import React from "react";
 import {
     IoSettingsSharp
 
-   
+
 } from "react-icons/io5";
 import { IoCartSharp } from 'react-icons/io5';
 import { IoHeartSharp } from 'react-icons/io5';
@@ -21,6 +21,11 @@ import coins from '../../assets/coins.png';
 
 function Rewords() {
     const [state, setState] = useState(true);
+    const [isToggled, setToggled] = useState(false);
+
+    const handleToggle = () => {
+        setToggled(!isToggled);
+    };
     return (
         <div>
 
@@ -350,7 +355,46 @@ function Rewords() {
 
 
                                 }}>Get notified</h3>
-                                <button>notifation</button>
+                                <button
+                                    onClick={handleToggle}
+                                    style={{
+                                        border: 'none',
+                                        borderRadius: '20px',
+                                        padding: '0',
+                                        width: '60px',
+                                        height: '30px',
+                                        backgroundColor: isToggled ? '#D9D9D9' : '#D9D9D9',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        cursor: 'pointer',
+                                        outline: 'none',
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            width: '28px',
+                                            height: '28px',
+                                            borderRadius: '50%',
+                                            backgroundColor: 'white',
+                                            boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
+                                            transform: `translateX(${isToggled ? '28px' : '0'})`,
+                                            transition: 'transform 0.3s ease',
+                                        }}
+                                    ></div>
+                                    <span
+                                        style={{
+                                            flex: '1',
+                                            display: 'flex',
+                                            justifyContent: isToggled ? 'flex-end' : 'flex-start',
+                                            fontSize: '14px',
+                                            fontFamily: 'Podkova',
+                                            margin: '0 5px',
+                                        }}
+                                    >
+                                        {isToggled ? 'ON' : 'OFF'}
+                                    </span>
+                                </button>
+
 
                             </div>
                             <p style={{
