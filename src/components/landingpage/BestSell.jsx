@@ -1,32 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useHttpClient } from "@/hooks/http-hook";
 
-function BestSell() {
+function BestSell(props) {
   const [products, setProducts] = useState([]);
-  const { sendRequest } = useHttpClient();
+  const { data } = props;
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const responseData = await sendRequest(
-          "/products/get_all_Products",
-          "get"
-        );
-        let temp = [];
-        for (let i = 0; i < responseData.data.length; i++) {
-          if (i == 2) break;
-          temp.push(responseData.data[i]);
-        }
-        setProducts(temp);
-      } catch (err) {}
-    };
-    fetchProducts();
-  }, []);
+    let temp = [];
+    for (let i = 0; i < data.length; i++) {
+      if (i == 2) break;
+      temp.push(data[i]);
+    }
+    setProducts(temp);
+  }, [data]);
 
   return (
     <div>
       <div className=" w-[100%] m-auto relative">
-        {/* Yellow Circles */}
         <div
           className="rounded-full  opacity-0.5 h-96 w-96 absolute top-[-270px] left-[-50px] z-[-2]"
           style={{ backgroundColor: "rgba(217, 201, 59, 0.79)" }}

@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import { useHttpClient } from "@/hooks/http-hook";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Image13 from "../assets/image13.jpg";
@@ -8,12 +10,26 @@ import BestSell from "@/components/landingpage/BestSell";
 import OurProduct from "@/components/landingpage/OurProduct";
 import OfficeProduct from "@/components/landingpage/OfficeProduct";
 import Slider from "@/components/landingpage/SliderCon";
-import SearchBar from "@/components/suggestions/Suggestions";
 ("@/components/suggestions");
-// import vector from "../assets/Vector.png";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [products, setProducts] = useState([]);
+  const { sendRequest } = useHttpClient();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const responseData = await sendRequest(
+          "/products/get_all_Products",
+          "get"
+        );
+        setProducts(responseData.data);
+      } catch (err) {}
+    };
+    fetchProducts();
+  }, []);
+
   const NavLink = ({ title }) => {
     return (
       <div className="relative">
@@ -41,9 +57,9 @@ export default function Home() {
   return (
     <div>
       <Topsection />
-      <Newcollection />
-      <BestSell />
-      <OurProduct />
+      <Newcollection data={products} />
+      <BestSell data={products} />
+      <OurProduct data={products} />
       <div
         className="w-[100%] h-[40%]   bg-yellow-600"
         style={{
@@ -58,8 +74,7 @@ export default function Home() {
           style={{ width: "100%", height: "40%", objectFit: "cover" }}
         />
       </div>
-
-      <OfficeProduct />
+      <OfficeProduct data={products} />
       <div
         className="w-[100%] h-[40%] m-auto  bg-yellow-600"
         style={{

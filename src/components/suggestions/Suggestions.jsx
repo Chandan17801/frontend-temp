@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useHttpClient } from "@/hooks/http-hook";
 
-const SearchBar = () => {
+const Suggestions = () => {
   const [query, setQuery] = useState("");
+  const [products, setProducts] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+  const { sendRequest } = useHttpClient();
 
   // Fetch suggestions based on the query (replace with your actual API call)
   const fetchSuggestions = async () => {
@@ -32,6 +35,22 @@ const SearchBar = () => {
     setSuggestions([]); // Clear suggestions when a suggestion is clicked
   };
 
+  const onSearchHandler = async (event) => {
+    event.preventDefault();
+    try {
+      const responseData = await sendRequest(
+        "/products/get_all_Products",
+        "get"
+      );
+      let temp = [];
+      for (let i = 0; i < data.length; i++) {
+        if (i == 5) break;
+        temp.push(data[i]);
+      }
+      setProducts(temp);
+    } catch (err) {}
+  };
+
   return (
     <div className="relative flex justify-center xl:mt-[5rem] mt-[4.7rem] items-center">
       <input
@@ -41,7 +60,10 @@ const SearchBar = () => {
         value={query}
         onChange={handleInputChange}
       />
-      <AiOutlineSearch className="w-10 h-10 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700" />
+      <AiOutlineSearch
+        className="w-10 h-10 border-black border rounded-md absolute right-0 bg-white cursor-pointer hover:scale-105 transition-all duration-700"
+        onClick={onSearchHandler}
+      />
 
       {suggestions.length > 0 && (
         <div className="absolute w-full mt-20 border rounded bg-white shadow-md top-0 left-0">
@@ -60,4 +82,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Suggestions;

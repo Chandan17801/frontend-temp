@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useHttpClient } from "@/hooks/http-hook";
 
-function Newcollection() {
+function Newcollection(props) {
   const [products, setProducts] = useState([]);
-  const { sendRequest } = useHttpClient();
+  const { data } = props;
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const responseData = await sendRequest(
-          "/products/get_all_Products",
-          "get"
-        );
-        let temp = [];
-        for (let i = 0; i < responseData.data.length; i++) {
-          if (i == 3) break;
-          temp.push(responseData.data[i]);
-        }
-        setProducts(temp);
-      } catch (err) {}
-    };
-    fetchProducts();
-  }, []);
+    let temp = [];
+    for (let i = 0; i < data.length; i++) {
+      if (i == 3) break;
+      temp.push(data[i]);
+    }
+    setProducts(temp);
+  }, [data]);
 
   return (
     <div>
