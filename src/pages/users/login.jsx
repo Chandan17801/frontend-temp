@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { useHttpClient } from "@/hooks/http-hook";
 import { Inter } from "next/font/google";
 import Link from "next/link";
@@ -8,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 const Login = () => {
   const [loginData, setLoginData] = useState({});
   const { sendRequest } = useHttpClient();
+  const router = useRouter();
 
   // Chnage handler
   const handleChnage = (e) => {
@@ -19,16 +21,16 @@ const Login = () => {
   //   submit Handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let response;
+    let res;
     try {
-      response = await sendRequest("/user/login", "post", loginData);
-      console.log(response);
+      res = await sendRequest("/user/login", "post", loginData);
+      if(res.data) console.log(res.data)
+      router.push("/");
     } catch (error) {
-      console.log("Error " + response);
+      console.log("Error " + res);
     }
-    console.log("Submited");
   };
-  
+
   return (
     <div className="relative">
       <section className="usersContainer min-h-screen  flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
