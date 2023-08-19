@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useHttpClient } from "@/hooks/http-hook";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const pathUrl = "http://localhost:4001/api/v1/user/register";
 
+const inter = Inter({ subsets: ["latin"] });
 
 const Signup = () => {
   const [loginData, setLoginData] = useState({});
+  const { sendRequest } = useHttpClient();
+
   // Chnage handler
   const handleChnage = (e) => {
     setLoginData({
@@ -15,8 +19,16 @@ const Signup = () => {
     });
   };
   //   submit Handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(loginData);
+    let res;
+    try {
+      res = await sendRequest("/user/register", "post", loginData);
+      console.log(res);
+    } catch (error) {
+      console.log("Error " + res);
+    }
     console.log("Submited");
   };
   return (

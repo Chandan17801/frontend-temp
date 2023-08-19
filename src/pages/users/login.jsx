@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { useHttpClient } from "@/hooks/http-hook";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 const Login = () => {
   const [loginData, setLoginData] = useState({});
+  const { sendRequest } = useHttpClient();
+
   // Chnage handler
   const handleChnage = (e) => {
     setLoginData({
@@ -15,12 +17,20 @@ const Login = () => {
     });
   };
   //   submit Handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    let response;
+    try {
+      response = await sendRequest("/user/login", "post", loginData);
+      console.log(response);
+    } catch (error) {
+      console.log("Error " + response);
+    }
     console.log("Submited");
   };
+  
   return (
-    <div className="relative" >
+    <div className="relative">
       <section className="usersContainer min-h-screen  flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
         <form
           onSubmit={handleSubmit}
