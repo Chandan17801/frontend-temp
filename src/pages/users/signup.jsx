@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useHttpClient } from "@/hooks/http-hook";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const pathUrl = "http://localhost:4001/api/v1/user/register";
 
+const inter = Inter({ subsets: ["latin"] });
 
 const Signup = () => {
   const [loginData, setLoginData] = useState({});
+  const { sendRequest } = useHttpClient();
+
   // Chnage handler
   const handleChnage = (e) => {
     setLoginData({
@@ -15,13 +19,21 @@ const Signup = () => {
     });
   };
   //   submit Handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(loginData);
+    let res;
+    try {
+      res = await sendRequest("/user/register", "post", loginData);
+      console.log(res);
+    } catch (error) {
+      console.log("Error " + res);
+    }
     console.log("Submited");
   };
   return (
     <div className="relative">
-      <section className=" min-h-screen  flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
+      <section className=" min-h-screen usersContainer flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
         <form
           onSubmit={handleSubmit}
           className={`flex flex-col justify-center items-center gap-6 bg-[#A89011C7] p-10 rounded-xl ${inter.className}`}

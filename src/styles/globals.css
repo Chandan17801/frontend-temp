@@ -27,6 +27,16 @@
   flex-direction: column;
 }
 
+
+.usersContainer {
+  background-image: url("/bg_login.png");
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust to your preference */
+  background-position: center; /* Adjust to your preference */
+  background-color: transparent; /* Optional */
+}
+
+
 @media (min-width: 768px) {
   .container {
       flex-direction: row;

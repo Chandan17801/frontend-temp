@@ -29,7 +29,7 @@ function SideNavbar(props) {
   };
 
   return (
-    <div className="w-[16.9375rem] flex flex-col gap-5 mb-5 flex-shrink-0 bg-white">
+    <div className={`w-[16.9375rem] flex flex-col gap-5 mb-5 flex-shrink-0 bg-white ${props.className}`}>
       {sideBarData.map((data) => (
         <SideNavItems
           key={data.id}

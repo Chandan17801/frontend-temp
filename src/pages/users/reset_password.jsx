@@ -21,7 +21,7 @@ const Retrive_Password = () => {
   };
   return (
     <div className="relative">
-      <section className=" min-h-screen  flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
+      <section className=" min-h-screen  usersContainer flex justify-center items-center absolute top-0 left-0 w-full bg bg-transparent">
         <form
           onSubmit={handleSubmit}
           className={`flex flex-col justify-center items-center gap-6 bg-[#A89011C7] p-10 rounded-xl ${inter.className}`}
