@@ -7,8 +7,6 @@ import "./setting.css";
 export default function App({ Component, pageProps }) {
   return (
     <>
-      {/* <Navbar /> */}
-
       <main className="min-h-screen">
         <Component {...pageProps} />
       </main>
