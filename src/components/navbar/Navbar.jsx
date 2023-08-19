@@ -39,13 +39,13 @@ const Navbar = () => {
           <SideDrawerItem key={data.id} val={data} />
         ))}
       </Sidebar>
-      <div className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[50rem] py-[2rem] mb-[1rem] flex">
+      <div className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[50rem] py-[2rem] mb-[1rem] flex justify-between items-center">
         <div className="w-[20.3125rem] flex justify-center items-center">
           <Link href={"/"}>
             <Image src={logo} alt="logo" />
           </Link>
         </div>
-        <div className="w-full h-[65px] flex justify-center pt-[1rem] items-center flex-col">
+        <div className="w-full  h-[65px] flex justify-center pt-[1rem] items-center flex-col">
           <SearchBar />
           <div className="2xl:block m-2 hidden">
             <div className="flex justify-around items-center gap-4">
