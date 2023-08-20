@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
 import { FaSearch } from "react-icons/fa";
 import Product from "../components/Product";
 
 const fashion = () => {
+  const [products, setProducts] = useState([]);
+  const router = useRouter();
+  let query = "";
+  if (router.query && router.query.query) query = router.query.query;
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      if (query == "") return;
+      const url = "http://localhost:4001/api/v1/products/search/" + query;
+      console.log(url);
+      try {
+        const responseData = await axios.get(url);
+        const data = responseData.data;
+        console.log(data);
+        let temp = [];
+        for (let i = 0; i < data.length; i++) {
+          if (i == 12) break;
+          temp.push(data[i]);
+        }
+        setProducts(temp);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchProducts();
+  }, [query]);
+
   return (
     <div>
       <div className="topHeading w-72  ml-5">
@@ -515,31 +544,10 @@ const fashion = () => {
         </div>
         {/* Right Div */}
         <div className="right-div w-[80%]">
-          <div className=" m-auto mt-8 flex flex-col items-center">
-            {/* Heading */}
-
-            {/* First Row */}
-            <div className="productsCardParent flex justify-center gap-5 w-full mb-4">
-              {/* Product 1 */}
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-            </div>
-
-            {/* Second Row */}
-            <div className="productsCardParent flex justify-center gap-5 w-full mb-4">
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-            </div>
-            <div className="productsCardParent flex justify-center gap-5 w-full mb-4">
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-            </div>
+          <div className="ml-[2rem] mt-[1rem] grid grid-cols-4 gap-4">
+            {products.map((product) => (
+              <Product key={product._id} product={product} />
+            ))}
           </div>
         </div>
       </div>

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useHttpClient } from "@/hooks/http-hook";
+import Router from "next/router";
 
 const Suggestions = () => {
   const [query, setQuery] = useState("");
-  const [products, setProducts] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-  const { sendRequest } = useHttpClient();
 
   // Fetch suggestions based on the query (replace with your actual API call)
   const fetchSuggestions = async () => {
@@ -37,21 +35,11 @@ const Suggestions = () => {
 
   const onSearchHandler = async (event) => {
     event.preventDefault();
-    try {
-      const responseData = await sendRequest(
-        "/products/search/" + query,
-        "get"
-      );
-      let temp = [];
-      for (let i = 0; i < data.length; i++) {
-        if (i == 5) break;
-        temp.push(data[i]);
-      }
-      setProducts(temp);
-    } catch (err) {}
+    Router.push({
+      pathname: "/fashion/",
+      query: { query },
+    });
   };
-
-  console.log(products);
 
   return (
     <div className="relative flex justify-center items-center">

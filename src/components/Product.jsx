@@ -1,36 +1,48 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaPlus } from 'react-icons/fa'; // Import the plus icon
-import Image1 from "../assets/images1.png";
+import React from "react";
+import { FaPlus } from "react-icons/fa"; // Import the plus icon
 
-const products = [
-  {
-    imageSrc: Image1,
-    description: "Saree....",
-    price: "$33.38"
-  },
-  // Add more products here if needed
-];
-
-function Product() {
+function Product(props) {
+  const product = props.product;
   return (
     <div>
-      {products.map((product, index) => (
-        <div key={index} className="bg-gray-100 shadow-md rounded-md p-4 w-[250px] h-[300px] productCard">
-          {/* Product Image */}
-          <Image src={product.imageSrc} alt={`Image ${index + 1}`} className="mb-4" />
-          {/* Content */}
-          <div className='flex justify-between items-center' style={{marginTop:"-20px", fontSize: "15px", fontFamily: "Lato", opacity: "0.9", padding: '8px', borderRadius: '4px' }}>
-            <div className="font-bold">
-              <p>{product.description}</p>
-              <p className='productPrice' >Price {product.price}</p>
-            </div>
-            <div className='AddToCartButton' style={{ backgroundColor: "#E0DB5C", padding: "8px", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <FaPlus color="white" />
-            </div>
+      <div className="bg-gray-100 shadow-md rounded-md p-4 w-[250px] h-[300px] productCard">
+        {/* Product Image */}
+        <img
+          src={"http://localhost:4001/files/" + product.mainImage}
+          alt={`Image `}
+          className="m-auto h-[95%]"
+        />
+        {/* Content */}
+        <div
+          className="flex justify-between items-center"
+          style={{
+            marginTop: "-20px",
+            fontSize: "15px",
+            fontFamily: "Lato",
+            opacity: "0.9",
+            padding: "8px",
+            borderRadius: "4px",
+          }}
+        >
+          <div className="font-bold">
+            <p>{product.description}</p>
+            <p className="productPrice">Price {product.price}</p>
+          </div>
+          <div
+            className="AddToCartButton"
+            style={{
+              backgroundColor: "#E0DB5C",
+              padding: "8px",
+              borderRadius: "50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <FaPlus color="white" />
           </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
