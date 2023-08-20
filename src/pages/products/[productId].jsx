@@ -17,6 +17,21 @@ const products = () => {
     query: { productId },
   } = useRouter();
 
+  const percent_Calc = (originalPrice, discountedPrice) => {
+    if (
+      originalPrice <= 0 ||
+      discountedPrice <= 0 ||
+      discountedPrice >= originalPrice
+    ) {
+      return 0; // Invalid input or no discount
+    }
+
+    const discountAmount = originalPrice - discountedPrice;
+    const discountPercentage = (discountAmount / originalPrice) * 100;
+
+    return Math.round(discountPercentage);
+  };
+
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -82,19 +97,22 @@ const products = () => {
           <div className=" flex mt-4  ">
             <div className="flex mr-7">
               <span className="">
-                <FaRupeeSign />
+                <FaRupeeSign className="mt-[6px] text-sm text-gray-600" />
               </span>
-              <span>599</span>
+              <span className="text-gray-600">{product.mrp}</span>
             </div>
 
             <div className="flex mr-7">
               <span className="">
-                <FaRupeeSign />
+                <FaRupeeSign className="mt-[6px] text-sm" />
               </span>
-              <span>2,999</span>
+              <span>{product.offeredPrice}</span>
             </div>
 
-            <span>70%OFF</span>
+            <span>{`${percent_Calc(
+              product.mrp,
+              product.offeredPrice
+            )}%OFF`}</span>
           </div>
 
           <div className="flex items-center">
