@@ -24,7 +24,7 @@ const colorData = [
   { id: 4, name: "Navy", col: "navy" },
   { id: 5, name: "Green", col: "green" },
   { id: 6, name: "Red", col: "red" },
-];
+]
 
 const discountData = [
   { id: 1, discount: 10 },
