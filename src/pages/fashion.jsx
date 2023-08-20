@@ -3,17 +3,77 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { FaSearch } from "react-icons/fa";
 import Product from "../components/Product";
+import ColorBox from "@/components/UIElements/ColorBox";
+import Discount from "@/components/UIElements/Discount";
+import Price from "@/components/UIElements/Price";
+
+const category = [
+  { id: 1, name: "Pure Silk Saree" },
+  { id: 2, name: "Semi Silk Saree" },
+  { id: 3, name: "Cotton Saree" },
+  { id: 4, name: "Kanchivaram Saree" },
+  { id: 5, name: "Bandhani Saree" },
+  { id: 6, name: "Organga Saree" },
+  { id: 7, name: "Printed Saree" },
+];
+
+const colorData = [
+  { id: 1, name: "Black", col: "black" },
+  { id: 2, name: "Blue", col: "blue" },
+  { id: 3, name: "White", col: "white" },
+  { id: 4, name: "Navy", col: "navy" },
+  { id: 5, name: "Green", col: "green" },
+  { id: 6, name: "Red", col: "red" },
+];
+
+const discountData = [
+  { id: 1, discount: 10 },
+  { id: 2, discount: 20 },
+  { id: 3, discount: 30 },
+  { id: 4, discount: 40 },
+  { id: 5, discount: 50 },
+];
+
+const priceRange = [
+  { id: 1, min: 159, max: 3999 },
+  { id: 2, min: 4000, max: 9999 },
+  { id: 3, min: 10000, max: 19499 },
+  { id: 4, min: 19500, max: 29999 },
+  { id: 5, min: 30000, max: null },
+];
 
 const fashion = () => {
   const [products, setProducts] = useState([]);
+  const [selectedColor, setSelectedColor] = useState([]);
+  const [selectedMinPrice, setSelectedMinPrice] = useState();
+  const [selectedMaxPrice, setSelectedMaxPrice] = useState();
+  const [selectedDiscount, setSelectedDiscount] = useState();
+  const [selectedOptions, setSelectedOptions] = useState([]);
   const router = useRouter();
   let query = "";
   if (router.query && router.query.query) query = router.query.query;
+
+  const handleCheckboxChange = (optionId) => {
+    if (selectedOptions.includes(optionId)) {
+      setSelectedOptions(selectedOptions.filter((id) => id !== optionId));
+    } else {
+      setSelectedOptions([...selectedOptions, optionId]);
+    }
+  };
+
+  const handleColorChange = (color) => {
+    if (selectedColor.includes(color)) {
+      setSelectedColor(selectedColor.filter((id) => id !== color));
+    } else {
+      setSelectedColor([...selectedColor, color]);
+    }
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
       if (query == "") return;
       const url = "http://localhost:4001/api/v1/products/search/" + query;
+      // const url = "http://localhost:4001/api/v1/products/get_all_Products";
       console.log(url);
       try {
         const responseData = await axios.get(url);
@@ -31,6 +91,43 @@ const fashion = () => {
     };
     fetchProducts();
   }, [query]);
+
+  const categoryFilteredData =
+    selectedOptions.length == 0
+      ? products
+      : products.filter((item) => selectedOptions.includes(item.category));
+
+  const colorFilteredProduct =
+    selectedColor.length == 0
+      ? categoryFilteredData
+      : categoryFilteredData.filter((data) =>
+          selectedColor.includes(data.color)
+        );
+
+  const discountFilteredProduct = !selectedDiscount
+    ? colorFilteredProduct
+    : colorFilteredProduct.filter((data) => data.discount > selectedDiscount);
+
+  const priceFilteredProduct = discountFilteredProduct.filter(
+    (data) =>
+      (!selectedMinPrice ? true : data.offeredPrice >= selectedMinPrice) &&
+      (!selectedMaxPrice ? true : data.offeredPrice <= selectedMaxPrice)
+  );
+
+  const colorHandler = (color) => {
+    setSelectedColor(color);
+  };
+
+  const discountHandlers = (off) => {
+    setSelectedDiscount(off);
+  };
+
+  const priceChangeHandler = (min, max) => {
+    setSelectedMinPrice(min);
+    setSelectedMaxPrice(max);
+  };
+
+  console.log(selectedColor);
 
   return (
     <div>
@@ -71,7 +168,6 @@ const fashion = () => {
           >
             Filter
           </h3>
-          {/* Add your filter options here (combos, size, etc.) */}
         </div>
 
         {/* Main Content */}
@@ -187,44 +283,18 @@ const fashion = () => {
               </p>
             </div>
             <div style={{ marginLeft: "6px" }}>
-              <div>
-                <label>
-                  <input type="checkbox" /> Pure Silk Saree
+              {category.map((item) => (
+                <label key={item.id} className="block">
+                  <input
+                    type="checkbox"
+                    checked={selectedOptions.includes(item.name)}
+                    onChange={() => handleCheckboxChange(item.name)}
+                  />{" "}
+                  {item.name}
                 </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Semi Silk Saree
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Cotten Saree
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Kanchivaram Saree
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Bandhani Saree
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Organga Saree
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Printed Saree
-                </label>
-              </div>
+              ))}
             </div>
           </div>
-
           <div
             style={{
               width: "80%",
@@ -239,26 +309,14 @@ const fashion = () => {
           >
             <p>PRICE </p>
             <div style={{ marginLeft: "6px" }}>
-              <div>
-                <label>
-                  <input type="checkbox" /> Rs. 159 to Rs. 9120(1092)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Rs. 9120 to Rs. 18081(339)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Rs. 18081 to Rs. 27042(52)
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="checkbox" /> Rs. 27042 to Rs. 36003(7)
-                </label>
-              </div>
+              {priceRange.map((data) => (
+                <Price
+                  key={data.id}
+                  min={data.min}
+                  max={data.max}
+                  onClick={priceChangeHandler}
+                />
+              ))}
             </div>
           </div>
 
@@ -288,211 +346,14 @@ const fashion = () => {
               </p>
             </div>
             <div style={{ marginLeft: "6px", height: "auto" }}>
-              <div
-                style={{
-                  width: "19px",
-                  height: "17px",
-                  display: "flex",
-                  gap: "5px",
-                  marginBottom: "7px",
-                }}
-              >
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none"
-                  >
-                    <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#000" />
-                  </svg>
-                </div>{" "}
-                <div style={{ width: "40px", height: "25px" }}>Black </div>
-              </div>
-              <div
-                style={{
-                  width: "19px",
-                  height: "17px",
-                  display: "flex",
-                  gap: "5px",
-                  marginBottom: "7px",
-                }}
-              >
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none"
-                  >
-                    <ellipse
-                      cx="9.5"
-                      cy="8.5"
-                      rx="9.5"
-                      ry="8.5"
-                      fill="#4F93FA"
-                    />
-                  </svg>
-                </div>{" "}
-                <div style={{ width: "30px", height: "25px" }}>Blue </div>
-              </div>
-              <div
-                style={{
-                  width: "19px",
-                  height: "17px",
-                  display: "flex",
-                  gap: "5px",
-                  marginBottom: "7px",
-                  marginLeft: "-5px",
-                }}
-              >
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="27"
-                    height="25"
-                    viewBox="0 0 27 25"
-                    fill="none"
-                  >
-                    <g filter="url(#filter0_d_26_414)">
-                      <ellipse
-                        cx="13.5"
-                        cy="8.5"
-                        rx="9.5"
-                        ry="8.5"
-                        fill="#F1F1F1"
-                      />
-                    </g>
-                    <defs>
-                      <filter
-                        id="filter0_d_26_414"
-                        x="0"
-                        y="0"
-                        width="27"
-                        height="25"
-                        filterUnits="userSpaceOnUse"
-                        color-interpolation-filters="sRGB"
-                      >
-                        <feFlood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <feColorMatrix
-                          in="SourceAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                          result="hardAlpha"
-                        />
-                        <feOffset dy="4" />
-                        <feGaussianBlur stdDeviation="2" />
-                        <feComposite in2="hardAlpha" operator="out" />
-                        <feColorMatrix
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                        />
-                        <feBlend
-                          mode="normal"
-                          in2="BackgroundImageFix"
-                          result="effect1_dropShadow_26_414"
-                        />
-                        <feBlend
-                          mode="normal"
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_26_414"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </div>{" "}
-                <div
-                  style={{ width: "30px", height: "25px", marginLeft: "-3px" }}
-                >
-                  White{" "}
-                </div>
-              </div>
-
-              <div
-                style={{
-                  width: "19px",
-                  height: "17px",
-                  display: "flex",
-                  gap: "5px",
-                  marginBottom: "7px",
-                }}
-              >
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none"
-                  >
-                    <ellipse
-                      cx="9.5"
-                      cy="8.5"
-                      rx="9.5"
-                      ry="8.5"
-                      fill="#110076"
-                    />
-                  </svg>
-                </div>{" "}
-                <div style={{ width: "30px", height: "25px" }}>Navy </div>
-              </div>
-
-              <div
-                style={{
-                  width: "19px",
-                  height: "17px",
-                  display: "flex",
-                  gap: "5px",
-                  marginBottom: "7px",
-                }}
-              >
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none"
-                  >
-                    <ellipse
-                      cx="9.5"
-                      cy="8.5"
-                      rx="9.5"
-                      ry="8.5"
-                      fill="#04BC43"
-                    />
-                  </svg>
-                </div>{" "}
-                <div style={{ width: "30px", height: "25px" }}>Green </div>
-              </div>
-              <div
-                style={{
-                  width: "19px",
-                  height: "17px",
-                  display: "flex",
-                  gap: "5px",
-                  marginBottom: "7px",
-                }}
-              >
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none"
-                  >
-                    <ellipse cx="9.5" cy="8.5" rx="9.5" ry="8.5" fill="#F00" />
-                  </svg>
-                </div>{" "}
-                <div style={{ width: "30px", height: "25px" }}>Red </div>
-              </div>
+              {colorData.map((data) => (
+                <ColorBox
+                  key={data.id}
+                  name={data.name}
+                  col={data.col}
+                  onClick={() => handleColorChange(data.name)}
+                />
+              ))}
             </div>
           </div>
           <h6 style={{ color: "red", marginTop: "70px", marginLeft: "40px" }}>
@@ -512,42 +373,26 @@ const fashion = () => {
           >
             <p>DISCOUNT RANGE </p>
             <div style={{ marginLeft: "6px" }}>
-              <div>
-                <label>
-                  <input type="radio" />
-                  10% and above
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="radio" /> 20% and above
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="radio" /> 30% and above
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="radio" /> 40% and above
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input type="radio" />
-                  50% and above
-                </label>
-              </div>
+              {discountData.map((data) => (
+                <Discount
+                  key={data.id}
+                  discount={data.discount}
+                  onClick={discountHandlers}
+                />
+              ))}
             </div>
           </div>
         </div>
         {/* Right Div */}
         <div className="right-div w-[80%]">
           <div className="ml-[2rem] mt-[1rem] grid grid-cols-4 gap-4">
-            {products.map((product) => (
-              <Product key={product._id} product={product} />
-            ))}
+            {priceFilteredProduct.length === 0 ? (
+              <h1 className="m-auto">No product found</h1>
+            ) : (
+              priceFilteredProduct.map((product) => (
+                <Product key={product._id} product={product} />
+              ))
+            )}
           </div>
         </div>
       </div>
