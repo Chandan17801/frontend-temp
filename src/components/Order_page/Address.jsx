@@ -124,7 +124,7 @@ function Address() {
           fontStyle: 'normal',
           fontWeight: '400'
 
-        }}>Address <br />Street: 2, The Mall, Station Road, Malad (west) <br></br> City: Mumbai  <br></br>State/province/area: Maharashtra <br></br>Phone number 02228803089 <br></br>Zip code 400064<br></br> Country calling code +91 Country India</div></div>
+        }}>Address<br />Street: 2, The Mall, Station Road, Malad (west)<br></br> City: Mumbai <br></br>State/province/area: Maharashtra <br></br>Phone number 02228803089 <br></br>Zip code 400064<br></br> Country calling code +91 Country India</div></div>
 
       </div>
 
