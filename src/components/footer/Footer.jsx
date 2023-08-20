@@ -33,7 +33,7 @@ const Footer = () => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
-      className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[50rem] h-[20rem] flex flex-col"
+      className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[37rem] h-[20rem] flex flex-col"
     >
       <div className="h-[5rem] w-[29.9375rem] bg-[#FFFFFF] flex justify-center items-center translate-y-[2.5rem] rounded-sm gap-[1.8rem] m-auto">
         {imgUrl.map((data) => (
@@ -45,7 +45,7 @@ const Footer = () => {
           />
         ))}
       </div>
-      <div className="bg-black w-[100%] h-[100%] pt-[4.5rem] text-white 2xl:gap-[4rem] gap-[3rem] flex flex-col">
+      <div className="bg-black w-[100%] h-[100%] pt-[4.5rem] px-[1rem] text-white 2xl:gap-[4rem] gap-[3rem] flex flex-col">
         <div className="flex gap-[2.81rem] font-bold justify-center items-center">
           <div className="uppercase">About</div>
           <div className="uppercase">Contact us</div>

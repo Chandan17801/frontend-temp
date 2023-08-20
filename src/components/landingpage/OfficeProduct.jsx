@@ -1,85 +1,39 @@
-import React from 'react'
-import Image from 'next/image';
-import Image1 from "../../assets/images1.png";
-function OfficeProduct() {
+import React, { useState, useEffect } from "react";
+
+function OfficeProduct(props) {
+  const [products, setProducts] = useState([]);
+  const { data } = props;
+
+  useEffect(() => {
+    let temp = [];
+    for (let i = 0; i < data.length; i++) {
+      if (i == 8) break;
+      temp.push(data[i]);
+    }
+    setProducts(temp);
+  }, [data]);
+
   return (
     <div>
-       <div className="w-[80%] h-[900px] m-auto mt-8 flex flex-col items-center">
-        {/* Heading */}
-
-        {/* First Row */}
-        <div className="flex justify-center gap-5 w-full mb-4">
-          {/* Product 1 */}
-          <div className="bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-           
-          </div>
-
-          {/* Product 2 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-           
-          </div>
-
-          {/* Product 3 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-            
-          </div>
-
-          {/* Product 4 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-           
-          </div>
-        </div>
-
-        {/* Second Row */}
-        <div className="flex justify-center gap-5 w-full mb-4">
-          {/* Product 5 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-          
-          </div>
-
-          {/* Product 6 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-           
-          </div>
-
-          {/* Product 7 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-           
-          </div>
-
-          {/* Product 8 */}
-          <div className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4" style={{ width: "300px", height: "400px" }}>
-            {/* Product Image */}
-            <Image src={Image1} alt="Image 1" className="mb-4" />
-            {/* Content */}
-           
-          </div>
+      <div className="w-[80%] m-auto my-8 mb-[5rem] flex flex-col items-center">
+        <div className="grid grid-cols-4 gap-[4rem]">
+          {products.map((product) => (
+            <div
+              key={product._id}
+              className="bg-gray-100 shadow-md rounded-md p-4"
+              style={{ width: "300px", height: "400px" }}
+            >
+              <img
+                src={"http://localhost:4001/files/" + product.mainImage}
+                alt="Image 1"
+                className="mb-4 h-[100%] m-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default OfficeProduct
+export default OfficeProduct;

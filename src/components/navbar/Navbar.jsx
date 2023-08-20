@@ -6,10 +6,10 @@ import Sidebar from "./Sidebar";
 import SideDrawerItem from "./SideDrawerItem";
 import logo from "../../assets/logo.png";
 import cart from "../../assets/Cart.png";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import SearchBar from "../suggestions/Suggestions";
+import Suggestions from "../suggestions/Suggestions";
 
 const navdata = [
   { id: 1, name: "MODERSTS", url: "/mordrest" },
@@ -40,6 +40,8 @@ const Navbar = () => {
         ))}
       </Sidebar>
       <div className="xl:w-[94.95rem] lg:w-[68rem] md:w-[64rem] w-[50rem] py-[2rem] mb-[1rem] flex justify-between items-center">
+
+     
         <div className="w-[20.3125rem] flex justify-center items-center">
           <Link href={"/"}>
             <Image src={logo} alt="logo" />
@@ -47,6 +49,7 @@ const Navbar = () => {
         </div>
         <div className="w-full  h-[65px] flex justify-center pt-[1rem] items-center flex-col">
           <SearchBar />
+
           <div className="2xl:block m-2 hidden">
             <div className="flex justify-around items-center gap-4">
               {navdata.map((data) => (
@@ -55,14 +58,14 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-2 w-32 mr-2 items-center">
+        <div className="flex justify-center md:gap-2 gap-1 w-32 mr-2 items-center">
           <Image
             src={cart}
             className="cursor-pointer h-[2.19794rem] w-[2.23438rem]"
             alt=""
           />
           <Link href={"/users/login"}>
-            <div className="flex w-[6.75rem] h-[2.8125rem] p-[0.8125rem] justify-center items-center font-[600] text-[1.125rem] cursor-pointer px-6 transition-all duration-700 hover:text-white hover:bg-[#34251f]">
+            <div className="flex md:w-[6.75rem] w-[4.5rem] h-[2.8125rem] md:p-[0.8125rem] p-1 justify-center items-center font-[600] text-[1.125rem] cursor-pointer transition-all duration-700 hover:text-white hover:bg-[#34251f]">
               LOGIN
             </div>
           </Link>
