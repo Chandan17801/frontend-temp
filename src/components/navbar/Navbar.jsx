@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="w-full  h-[65px] flex justify-center pt-[1rem] items-center flex-col">
-          <SearchBar />
+          {/* <SearchBar /> */}
 
           <div className="2xl:block m-2 hidden">
             <div className="flex justify-around items-center gap-4">
