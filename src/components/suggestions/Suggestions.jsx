@@ -54,7 +54,7 @@ const Suggestions = () => {
   console.log(products);
 
   return (
-    <div className="relative flex justify-center xl:mt-[5rem] mt-[4.7rem] items-center">
+    <div className="relative flex justify-center items-center">
       <input
         type="text"
         className="search-gradient xl:w-[30rem] w-[15rem] h-[2.5rem] px-[0.5rem] rounded-md"

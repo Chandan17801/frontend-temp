@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 
 export default function App({ Component, pageProps }) {
   return (
+
     <Provider store={store}>
       <Navbar />
       <main className="min-h-screen">
