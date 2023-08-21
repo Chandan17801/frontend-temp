@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaMinus, FaPlus, FaArrowLeft } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import formatToINR from "../../../utils/currencyFormatter";
 
 const Ship = () => {
   const [sareeCount1, setSareeCount1] = useState(0);
@@ -87,14 +88,14 @@ const Ship = () => {
       <div className="ml-4 md:ml-20 mt-6 md:mt-0">
         <div className="flex justify-between p-6">
           <div className="">Subtotal</div>
-          <div>{subtotal}</div>
+          <div>{formatToINR(subtotal)}</div>
         </div>
         <hr className="border-t border-black-500 w-full ml-2" />
       </div>
       <div className="ml-4 md:ml-20 mt-6 md:mt-0">
         <div className="flex justify-between p-6">
           <div className="">Sales tax(12%)</div>
-          <div>{tax}</div>
+          <div>{formatToINR(tax)}</div>
         </div>
         <hr className="border-t border-black-500 w-full ml-2" />
       </div>
@@ -108,7 +109,7 @@ const Ship = () => {
       <div className="bg-gray-700 border-4  ml-4 md:ml-20 mt-6 md:mt-0">
         <div className=" flex justify-between p-6">
           <div className="font-bold text-yellow-500">Total </div>
-          <div className="font-bold text-yellow-500">{total}</div>
+          <div className="font-bold text-yellow-500">{formatToINR(total)}</div>
         </div>
       </div>
     </div>
