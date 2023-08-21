@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 import { useHttpClient } from "@/hooks/http-hook";
+import { login } from "../../../store/features/user";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
@@ -9,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 const Login = () => {
   const [loginData, setLoginData] = useState({});
   const { sendRequest } = useHttpClient();
+  const dispatch = useDispatch();
   const router = useRouter();
 
   // Chnage handler
@@ -24,10 +27,11 @@ const Login = () => {
     let res;
     try {
       res = await sendRequest("/user/login", "post", loginData);
-      if(res.data) console.log(res.data)
+      if (res.data) console.log(res.data);
+      dispatch(login());
       router.push("/");
     } catch (error) {
-      console.log("Error " + res);
+      console.log("Error " + error);
     }
   };
 

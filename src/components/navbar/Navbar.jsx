@@ -1,11 +1,13 @@
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import NavbarItems from "./NavbarItems";
 import BackDrop from "../UIElements/BackDrop";
 import Sidebar from "./Sidebar";
 import SideDrawerItem from "./SideDrawerItem";
+import Users from "../user/users";
 import logo from "../../assets/logo.png";
 import cart from "../../assets/Cart.png";
+import { useSelector } from "react-redux";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -21,14 +23,27 @@ const navdata = [
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const [showOption, setShowOption] = useState(false);
   const { route } = useRouter();
+  const loggedIn = useSelector((state) => state.user.loggedIn);
   const cartItemsNumber = 9;
+
+  useEffect(() => {
+    const readCookies = () => {
+      const cookieString = document.cookie;
+      console.log(cookieString);
+    };
+    readCookies();
+  }, []);
 
   const openNavHandler = () => {
     setShow(true);
   };
   const closeNavHandler = () => {
     setShow(false);
+  };
+  const toggleOptionHandler = () => {
+    setShowOption((prev) => !prev);
   };
 
   return (
@@ -62,11 +77,23 @@ const Navbar = () => {
             className="cursor-pointer h-[2.19794rem] w-[2.23438rem]"
             alt=""
           />
-          <Link href={"/users/login"}>
-            <div className="flex md:w-[6.75rem] w-[4.5rem] h-[2.8125rem] md:p-[0.8125rem] p-1 justify-center items-center font-[600] text-[1.125rem] cursor-pointer transition-all duration-700 hover:text-white hover:bg-[#34251f]">
-              LOGIN
+          {loggedIn ? (
+            <div className="relative flex ml-[1.5rem] md:w-[6.75rem] w-[4.5rem] h-[2.8125rem]">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt="Profile"
+                className="cursor-pointer"
+                onClick={toggleOptionHandler}
+              />
+              {showOption && <Users />}
             </div>
-          </Link>
+          ) : (
+            <Link href={"/users/login"}>
+              <div className="flex md:w-[6.75rem] w-[4.5rem] h-[2.8125rem] md:p-[0.8125rem] p-1 justify-center items-center font-[600] text-[1.125rem] cursor-pointer transition-all duration-700 hover:text-white hover:bg-[#34251f]">
+                LOGIN
+              </div>
+            </Link>
+          )}
           <div className="mr-4 visible hidden">
             <AiOutlineMenu />
           </div>
