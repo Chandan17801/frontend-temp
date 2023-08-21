@@ -1,8 +1,24 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { add_to_cart } from "../../store/features/cart";
 import { FaPlus } from "react-icons/fa"; // Import the plus icon
 
 function Product(props) {
   const product = props.product;
+  const dispatch = useDispatch();
+
+  const onClickAddHandler = () => {
+    dispatch(
+      add_to_cart({
+        _id: product._id,
+        image: product.mainImage,
+        quantity: 1,
+        name: product.productName,
+        price: product.offeredPrice,
+      })
+    );
+  };
+
   return (
     <div>
       <div className="bg-gray-100 shadow-md rounded-md p-4 w-[250px] h-[300px] productCard">
@@ -25,11 +41,11 @@ function Product(props) {
           }}
         >
           <div className="font-bold">
-            <p>{product.description}</p>
-            <p className="productPrice">Price {product.price}</p>
+            <p>{product.productName}</p>
+            <p className="productPrice">Price: Rs. {product.offeredPrice}</p>
           </div>
           <div
-            className="AddToCartButton"
+            className="AddToCartButton cursor-pointer"
             style={{
               backgroundColor: "#E0DB5C",
               padding: "8px",
@@ -38,6 +54,7 @@ function Product(props) {
               justifyContent: "center",
               alignItems: "center",
             }}
+            onClick={onClickAddHandler}
           >
             <FaPlus color="white" />
           </div>

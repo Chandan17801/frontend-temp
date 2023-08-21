@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import AddressCard from "./AddressCard";
 
 const address = [
@@ -25,6 +26,8 @@ const address = [
 ];
 
 function Profile() {
+  const addressList = useSelector((state) => state.address.addresses);
+
   return (
     <div className="md:w-[44rem] w-[37rem]">
       <div className="flex px-2">
@@ -72,7 +75,7 @@ function Profile() {
         </div>
       </div>
       <div className="my-5">
-        {address.map((data) => (
+        {addressList.map((data) => (
           <AddressCard key={data.id} val={data} />
         ))}
       </div>

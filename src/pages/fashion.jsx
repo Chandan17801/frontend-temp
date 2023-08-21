@@ -24,7 +24,7 @@ const colorData = [
   { id: 4, name: "Navy", col: "navy" },
   { id: 5, name: "Green", col: "green" },
   { id: 6, name: "Red", col: "red" },
-]
+];
 
 const discountData = [
   { id: 1, discount: 10 },
@@ -71,20 +71,14 @@ const fashion = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      if (query == "") return;
-      const url = "http://localhost:4001/api/v1/products/search/" + query;
-      // const url = "http://localhost:4001/api/v1/products/get_all_Products";
-      console.log(url);
+      let url = "http://localhost:4001/api/v1/products/search/" + query;
+      if (query == "") {
+        url = "http://localhost:4001/api/v1/products/get_all_Products";
+      }
       try {
         const responseData = await axios.get(url);
         const data = responseData.data;
-        console.log(data);
-        let temp = [];
-        for (let i = 0; i < data.length; i++) {
-          if (i == 12) break;
-          temp.push(data[i]);
-        }
-        setProducts(temp);
+        setProducts(data);
       } catch (err) {
         console.log(err);
       }
@@ -114,6 +108,12 @@ const fashion = () => {
       (!selectedMaxPrice ? true : data.offeredPrice <= selectedMaxPrice)
   );
 
+  let finalData = [];
+  for (let i = 0; i < priceFilteredProduct.length; i++) {
+    if (i == 12) break;
+    finalData.push(priceFilteredProduct[i]);
+  }
+
   const colorHandler = (color) => {
     setSelectedColor(color);
   };
@@ -126,8 +126,6 @@ const fashion = () => {
     setSelectedMinPrice(min);
     setSelectedMaxPrice(max);
   };
-
-  console.log(selectedColor);
 
   return (
     <div>
@@ -386,10 +384,10 @@ const fashion = () => {
         {/* Right Div */}
         <div className="right-div w-[80%]">
           <div className="ml-[2rem] mt-[1rem] grid grid-cols-4 gap-4">
-            {priceFilteredProduct.length === 0 ? (
+            {finalData.length === 0 ? (
               <h1 className="m-auto">No product found</h1>
             ) : (
-              priceFilteredProduct.map((product) => (
+              finalData.map((product) => (
                 <Product key={product._id} product={product} />
               ))
             )}
