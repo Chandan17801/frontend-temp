@@ -54,13 +54,12 @@ const products = () => {
         <div className="md:w-full">
           <div className=" border-2 flex md:pr-8 py-3.5 md:pl-8 justify-center">
             <div className=" flex-col items-center">
-              <Image
-                src={product.mainImgage}
+              <img
+                src={"http://localhost:4001/files/" + product.mainImage}
                 layout="responsive"
-                width={700}
-                height={500}
+                className="h-[30rem]"
                 alt="picture of the saree"
-              ></Image>
+              ></img>
             </div>
             <div className=" mt-3 md:pl-3">
               <span className="text-red-500">

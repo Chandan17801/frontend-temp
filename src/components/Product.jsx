@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import Router from "next/router";
 import { add_to_cart } from "../../store/features/cart";
 import { FaPlus } from "react-icons/fa"; // Import the plus icon
 
@@ -17,6 +18,12 @@ function Product(props) {
         price: product.offeredPrice,
       })
     );
+  };
+
+  const openDetail = (id) => {
+    Router.push({
+      pathname: "/products/" + id,
+    });
   };
 
   return (
@@ -41,7 +48,12 @@ function Product(props) {
           }}
         >
           <div className="font-bold">
-            <p>{product.productName}</p>
+            <p
+              onClick={() => openDetail(product._id)}
+              className="cursor-pointer"
+            >
+              {product.productName}
+            </p>
             <p className="productPrice">Price: Rs. {product.offeredPrice}</p>
           </div>
           <div
