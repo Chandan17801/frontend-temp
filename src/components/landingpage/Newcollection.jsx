@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Router from "next/router";
 
 function Newcollection(props) {
   const [products, setProducts] = useState([]);
@@ -12,6 +13,12 @@ function Newcollection(props) {
     }
     setProducts(temp);
   }, [data]);
+
+  const openDetail = (id) => {
+    Router.push({
+      pathname: "/products/" + id,
+    });
+  };
 
   return (
     <div>
@@ -43,6 +50,7 @@ function Newcollection(props) {
               <div
                 key={product._id}
                 className="flex mt-4 w-[1200px] justify-center  gap-10"
+                onClick={() => openDetail(product._id)}
               >
                 <div
                   className="flex flex-col justify-center p-4 h-[410px] w-[350px]"

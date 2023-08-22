@@ -46,8 +46,6 @@ const products = () => {
     getProduct();
   }, [productId]);
 
-  console.log(product);
-
   return (
     <div>
       <div className="md:m-5">
@@ -89,8 +87,10 @@ const products = () => {
         </div>
         <div className="pl-4 md:pl-8 mt-4">
           <h1>
-            LOROFY <br />
-            <b>DESIGNER SAREE (YELLOW)</b>
+            {product.productName} <br />
+            <b>
+              {product.productType} ({product.color})
+            </b>
           </h1>
           <h3 className="text-yellow-400 font-black">SPECIAL PRICE</h3>
           <div className=" flex mt-4  ">

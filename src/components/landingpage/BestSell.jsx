@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Router from "next/router";
 
 function BestSell(props) {
   const [products, setProducts] = useState([]);
@@ -12,6 +13,12 @@ function BestSell(props) {
     }
     setProducts(temp);
   }, [data]);
+
+  const openDetail = (id) => {
+    Router.push({
+      pathname: "/products/" + id,
+    });
+  };
 
   return (
     <div>
@@ -89,6 +96,7 @@ function BestSell(props) {
                 key={product._id}
                 className="w-40 h-40 bg-gray-100 shadow-md rounded-md p-4 "
                 style={{ width: "280px", height: "350px" }}
+                onClick={() => openDetail(product._id)}
               >
                 <img
                   src={"http://localhost:4001/files/" + product.mainImage}

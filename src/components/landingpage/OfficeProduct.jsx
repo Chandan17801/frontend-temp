@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Router from "next/router";
 
 function OfficeProduct(props) {
   const [products, setProducts] = useState([]);
@@ -13,6 +14,12 @@ function OfficeProduct(props) {
     setProducts(temp);
   }, [data]);
 
+  const openDetail = (id) => {
+    Router.push({
+      pathname: "/products/" + id,
+    });
+  };
+
   return (
     <div>
       <div className="w-[80%] m-auto my-8 mb-[5rem] flex flex-col items-center">
@@ -22,6 +29,7 @@ function OfficeProduct(props) {
               key={product._id}
               className="bg-gray-100 shadow-md rounded-md p-4"
               style={{ width: "300px", height: "400px" }}
+              onClick={() => openDetail(product._id)}
             >
               <img
                 src={"http://localhost:4001/files/" + product.mainImage}
